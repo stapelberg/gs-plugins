@@ -1,0 +1,553 @@
+Version 3.22.5
+~~~~~~~~~~~~~~
+Released: 2017-01-16
+
+This stable release fixes the following bugs:
+ * Fix local package installation
+ * Fix codec and printer driver installation for packages without appdata
+ * Fix update notes to show up on the Updates page
+ * Add support for "+" operator at the end of SPDX license identifiers
+ * Only show the scary firmware warning for removable devices
+ * Various fixes for flatpak support
+ * Fix several potential crashers
+
+This release also updates translations.
+
+Version 3.22.4
+~~~~~~~~~~~~~~
+Released: 2016-12-08
+
+This stable release fixes the following bugs:
+ * Add locking to GsApp to fix hard-to-debug thread related crashes
+ * Fix various top crashers listed on Fedora's retrace server
+ * Fix an issue that caused app addon install/removal to get triggered without
+   user interaction
+ * Make flatpakref installation work
+ * Hide review buttons when there's no internet connection
+
+This release also updates translations.
+
+Version 3.22.3
+~~~~~~~~~~~~~~
+Released: 2016-12-01
+
+This stable release fixes the following bugs:
+ * Misc. fixes to the search results page
+ * Misc. flatpak bug and crasher fixes
+ * Correctly raise the codec search window under the Wayland session
+ * Improve spinner state handling on the updates page
+ * Make it possible to upgrade two Fedora versions at a time
+ * Fix a memory leak with every search request
+ * Don't show screenshot placeholder for add-ons that can't have screenshots
+ * Show an error if the screenshot download fails
+ * Get the screenshot metadata from the GNOME Shell Extension JSON data
+
+Version 3.22.2
+~~~~~~~~~~~~~~
+Released: 2016-11-07
+
+This stable release fixes the following bugs:
+ * Large number of fixes and improvements for flatpak support
+ * Improved handling for flatpak repos with multiple branches
+ * Initial support for installing flatpakrepo files
+ * Fix a crash when searching for codecs
+ * Fix a crash when de-duplicating applications
+ * Speed improvements for loading appstream data
+ * Refactor snapd handling code using snapd-glib
+ * Show the search bar when the user does Ctrl+f
+
+This release also updates translations.
+
+Version 3.22.1
+~~~~~~~~~~~~~~
+Released: 2016-10-12
+
+This stable release fixes the following bugs:
+ * Fix several issues with flatpak bundles
+ * Fix installing local packages
+ * Fix a crash when failing to get an installed flatpak ref
+ * Speed up loading the details and overview pages
+ * Switch to using the ODRS server hosted by GNOME
+
+This release also updates translations.
+
+Version 3.22.0
+~~~~~~~~~~~~~~
+Released: 2016-09-19
+
+This is the first stable release for GNOME 3.22 and updates several
+translations.
+
+Version 3.21.92
+~~~~~~~~~~~~~~~
+Released: 2016-09-13
+
+This is an unstable release in the 3.21 development series, with the following
+improvements:
+ * Add a new section name in the Addons category for drivers
+ * Add a plugin to match a hardware modalias
+
+The following bugs are also fixed:
+ * Do not hide the origin when installing or removing an app
+ * Do not show the screenshot fallback image for firmware or drivers
+ * Fix launching app's details from the installed notification
+ * Fix showing the source line in the installed panel
+ * Unbreak the GNOME Shell search provider
+ * Use the same padding as a GtkStackSwitcher
+
+This release also updates translations for many languages.
+
+Version 3.21.91
+~~~~~~~~~~~~~~~
+Released: 2016-08-31
+
+This is an unstable release in the 3.21 development series, with the following
+improvements:
+ * Add functionality to enable non-free sources
+ * Show the device bootloader screenshot when required
+
+The following bugs are also fixed:
+ * Always return consistent results by allowing plugins to share a cache
+ * Ensure the search text is showing when going back to search results
+ * Only enable the firmware 'Install' button when the device is in the right
+   mode
+ * Remove an app from the installed view when it's uninstalled
+ * Show percentage progress when installing firmware
+
+This release also updates translations for many languages.
+
+Version 3.21.90
+~~~~~~~~~~~~~~~
+Released: 2016-08-15
+
+This is an unstable release in the 3.21 development series, with the following
+improvements:
+ * Limit the ODRS moderation queue to a specific language
+
+The following bugs are also fixed:
+ * Correctly load .flatpakrepo files
+ * Don't get the download size for installed flatpak packages
+ * Fix showing the progress bar when installing apps
+ * Never try to modify the application name
+ * Only notify about upgrades once per month
+
+This release also updates translations for many languages.
+
+Version 3.21.4
+~~~~~~~~~~~~~~
+Released: 2016-07-18
+
+This is an unstable release in the 3.21 development series, with the following
+improvements:
+ * Add a cancel button and progress information to the details page
+ * Add a dialog to confirm upgrade removals
+ * Add support for authenticating in plugins
+ * Add support for snaps
+ * Enable gtk-doc generation for documentation
+ * Show a new-style category list on the overview page
+ * Show origin information when applications are available from multiple
+   sources
+ * Show sandboxing information for selected applications
+ * Show the star ratings in more places
+ * Support installing .flatpakrepo files
+ * Support launching applicatins using a appstream:// URL
+
+The following bugs are also fixed:
+ * Allow plugins to be enabled and disabled at runtime
+ * Always show the 'MyLanguage' kudo when in en_US locale
+ * Correctly trigger systemd offline updates when only processing OS updates
+ * Disable app folders feature when run outside GNOME
+ * Do not show buttons on the search results
+ * Do not use deprecated CSS properties
+ * Do not use deprecated fwupd API
+ * Ensure reviews are shown in the correct order
+ * Fix a crash when double clicking files
+ * Fix several UX issues when upgrading
+ * Show the 'More Reviews' button in the details panel
+ * Try really hard to have two rows of important categories
+
+This release also updates translations for many languages.
+
+Version 3.21.2
+~~~~~~~~~~~~~~
+Released: 2016-05-23
+
+This is an unstable release in the 3.21 development series, with the following
+improvements:
+ * Add a --details-pkg option to the gnome-software binary
+ * Add support for flatpak packages
+ * Add a plugin to auto-add some license information
+ * Add depends, requires and conflicts at initialize time
+ * Add support for application key colors
+ * Export a set of headers to allow external plugins to be built
+
+The following bugs are also fixed:
+ * Do not crash if plugins are badly behaved
+ * Do not directly load pixbufs in the AppStream plugin
+ * Do not unconditionally invalidate the updates list on hardware hotplug
+ * Find the best AppSteam component when matching any prefixes
+ * Fix crash due to network change before app activation
+ * Fix launching various KDE4 applications
+ * Support getting cached content from /var/cache and /usr/share
+
+This release also updates translations for many languages.
+
+Version 3.21.1
+~~~~~~~~~~~~~~
+Released: 2016-04-25
+
+This is an unstable release in the 3.21 development series, with the following
+improvements:
+ * Add an initial loading panel when there is no metadata
+ * Add an outline ostree plugin that just adds remotes as sources
+ * Add an unreviewable application quirk
+ * Add initial Steam support
+ * Add support for app shortcut addition/removal
+ * Add support for GNOME Shell extensions
+ * Allow free-but-unspecified SPDX tokens
+ * Allow widgets to use custom CSS in a generic way
+ * Do the PackageKit refresh as a background transaction
+ * Hide "Software Sources" menu when its action is disabled
+ * Make the distro upgrades dialog match the new mockup
+ * Split the 'size' property into size-installed and size-download
+ * Use a link instead of a button for history
+ * Use AppStream files for the popular, featured and extra category data
+ * Use dpkg-deb info to create a GsApp when double clicking on a .deb file
+ * Use FwupdClient from fwupd 0.7.0
+ * Use GdkPixbuf to parse icns files
+ * Use gsettings to enable/disable the 'sources' action
+ * Use the Fedora themed image for the upgrade banner
+ * When there are no trusted sources mark everything as non-3rd-party
+
+The following bugs are also fixed:
+ * Actually show the error dialog for an invalid file
+ * Allow all functions called by g_module_symbol() to fail
+ * Allow popular and featured apps to match any prefix
+ * Do not maintain a cache of applications in the plugin loader
+ * Do not make the ODRS plugin depend on xdg-app
+ * Do not re-request the distro-upgrade when switching pages
+ * Do not show ratings and reviews for some component kinds
+ * Do not show the distro-upgrade notification if the window is open
+ * Do not use the header bar on Unity
+ * Fix a crash when double clicking package files
+ * Fix live installing firmware
+ * Get the correct icon size when installing xdg-app bundles on HiDPI
+ * Hide the kudo details panel for non desktop components
+ * Load screenshots directly if their URLs point to local files
+ * Lower the limits for review text
+ * Make all the plugins more threadsafe
+ * Make the provenance plugin non-specific to Fedora
+ * Move header bar button creation into individual pages
+ * Move the Install & Restart button below the upgrade banner
+ * Never show star ratings on the category app tiles
+ * Only show one modal dialog at a time
+ * Only show the session manager restart if there were any non-live updates
+ * Properly support multi-line .deb descriptions
+ * Show a 'Install All' button when all the updates can be installed live
+ * Show a modal dialog when downloading the distro-upgrade failed
+ * Show the upgrades banner even if there are no updates to show
+ * Use a cache file to respect the fedora-distro-upgrades cache-age
+ * Use GFile instead of a filename when converting apps
+
+This release also updates translations for many languages.
+
+Version 3.19.91
+~~~~~~~~~~~~~~~
+Released: 2016-02-29
+
+This is an unstable release in the 3.19 development series, with the following
+improvements:
+ * Add an 'All' subcategory in the category shell
+ * Add ratings and review functionality for Ubuntu
+ * Install the xdg-app runtime as required automatically
+ * Show a confirmation dialog before reporting a review
+ * Show a guide label for the different star values
+ * Support installing local xdg-app bundles
+
+The following bugs are also fixed:
+ * Correctly identify local packages with sources
+ * Do not add multiple search results for the same app
+ * Do not show xdg-app runtimes in the installed panel
+ * Escape markup before showing modal dialogs
+
+This release also updates translations for many languages.
+
+Version 3.19.90
+~~~~~~~~~~~~~~~
+Released: 2016-02-15
+
+This is an unstable release in the 3.19 development series, with the following
+improvements:
+ * Add end-user application review functionality
+ * Add support for upgrading the OS from one release to another
+ * Add support for xdg-app and Limba bundles
+ * Add tags to applications, and explain them in the details page
+ * Update the list of featured applications on the front page
+
+The following bugs are also fixed:
+ * Add a missing tag to the software center metadata file
+ * PackageKit support is now optional
+ * Temporarily remove the remove button in the sources dialog
+ * Use versioned user cache directories to pick up new screenshots
+
+This release also updates translations for many languages.
+
+Version 3.19.4
+~~~~~~~~~~~~~~
+Released: 2016-01-15
+
+This is an unstable release in the 3.19 development series, with the following
+improvements:
+ * Add a link to Wikipedia to explain proprietary and public domain software
+ * Allow administrators to override the default popular applications
+ * Improve the interface for device firmware updates and some can be done live
+ * Make sure Characters and Disks show up in Utilities
+ * Show 3rd party applications in the search results
+ * Show a nicer installation dialog when installing local files
+ * Speed up the application first-start and also speed up switching pages
+ * Try to show if an application is free software
+
+The following bugs are also fixed:
+ * Do not crash on refresh if the fwupd daemon is not available
+ * Fix installing web applications
+ * Rework several windows to fit better on small screens
+ * Use the correct user agent string when downloading firmware
+
+This release also updates translations for many languages.
+
+Version 3.18.3
+~~~~~~~~~~~~~~
+Released: 2015-11-05
+
+This stable release fixes the following bugs:
+ * Use the correct user agent string when downloading firmware
+ * Fix a crash in the limba plugin
+ * Fix installing web applications
+
+This release also updates translations for many languages.
+
+Version 3.18.2
+~~~~~~~~~~~~~~
+Released: 2015-10-15
+
+This stable release fixes the following bugs:
+ * Fix a regression that could lead to never finding any updates
+ * Fix an issue with getting package details for apps without AppData
+
+This release also updates translations for many languages.
+
+Version 3.18.1
+~~~~~~~~~~~~~~
+Released: 2015-10-13
+
+This stable release fixes the following bugs:
+ * Do not force the cache refresh and delete otherwise valid packages
+ * Fix several potential crashes when navigating and when installing
+ * Get the new application icon for local packages after installation
+ * Improve cold start time by only parsing AppStream data once
+ * Make sure Characters and Disks show up in Utilities
+ * Only download the fwupd metadata signature once per day
+ * Show an empty space for no category results
+ * Show applications without AppData in the installed panel
+
+This release also updates translations for many languages.
+
+Version 3.18.0
+~~~~~~~~~~~~~~
+Released: 2015-09-21
+
+This is the first stable release for the GNOME 3.18 desktop!
+
+Version 3.17.92
+~~~~~~~~~~~~~~~
+Released: 2015-09-15
+
+This is an unstable release in the 3.17 development series, with the following
+improvements:
+ * Fix getting firmware updates by parsing the metadata correctly
+ * Make the application menu path correct in RTL locales
+ * Don't keep the application running forever when run as a search provider
+
+This release also updates translations for many languages.
+
+Version 3.17.91
+~~~~~~~~~~~~~~~
+Released: 2015-09-03
+
+This is an unstable release in the 3.17 development series, with the following
+improvements:
+ * Better theming for the category sidebar
+ * Use standard size icon in the about dialog
+ * Support mouse back button for going back in dialogs
+ * Fix incorrect alignment on the front page in RTL languages
+ * Misc other minor bugs fixed
+
+This release also updates translations for many languages.
+
+Version 3.17.90
+~~~~~~~~~~~~~~~
+Released: 2015-08-19
+
+This is an unstable release with the following bugs fixed:
+ * Use CSS to style the error message details
+ * Correctly align labels in the Add to Folder dialog
+
+This release also updates translations for many languages.
+
+Version 3.17.3
+~~~~~~~~~~~~~~
+Released: 2015-08-12
+
+This is an unstable release in the 3.17 development series, with the following
+improvements:
+ * Add basic support for Limba bundles
+ * Automatically download new firmware metadata from LVFS
+ * Hide updates UI on managed systems
+ * Show a new notification when security updates remain unapplied
+ * Show installation progress when installing applications
+ * Use some new applications to the picked category
+
+Bugs fixed in this release:
+ * Do not show applications that are not available when searching by category
+ * Don't crash when launching an app that has no desktop ID
+ * Don't show applications without AppData in the category view
+ * Fix a possible race and crash when loading icons
+ * Fix locking in the AppStream code to fix several crashes
+ * Use better error messages on offline update failure
+ * Withdraw the notification when prepared update gets invalidated
+
+This release also updates translations for many languages.
+
+Version 3.17.2
+~~~~~~~~~~~~~~
+Released: 2015-06-05
+
+This is an unstable release in the 3.17 development series, with the following
+improvements:
+ * Make fwupd dependency automagic
+
+Bugs fixed in this release:
+ * Fix a regression from the previous unstable release that made it impossible
+   to install updates
+ * Fix a crash in the screenshot loader
+ * Fix a crash in the sources dialog
+ * Fix a crash when installing rpms that lack description
+ * Wrap long descriptions in the update dialog
+
+This release also updates translations for many languages.
+
+Version 3.17.1
+~~~~~~~~~~~~~~
+Released: 2015-05-25
+
+This is the first unstable release in the 3.17 development series, with a
+number of new features:
+ * Support getting firmware updates through the fwupd daemon
+ * Use a smaller number of tiles on the front page on small monitors
+ * Rework internal modulesets, making it easier to edit the list of featured
+   apps
+ * Revert back to using a hand-picked list of featured apps
+ * Several improvements to the sources dialog
+ * Show better human readable names when searching for font scripts
+ * Show a spinner while loading the data for the update history dialog
+
+This release also updates translations for many languages.
+
+Version 3.16.2
+~~~~~~~~~~~~~~
+Released: 2015-05-11
+
+This release fixes the following bugs:
+ * Remove redundant OK button from the updates installed notification
+ * Display a better human readable title for printer drivers
+ * Show a better UI for offline update failure dialog
+ * Set default actions for the update done notifications
+ * Allow searching for packages via the API without appdata
+ * Fix showing webapps with non-local icons
+
+This release also updates translations for many languages.
+
+Version 3.16.1
+~~~~~~~~~~~~~~
+Released: 2015-04-14
+
+This release fixes the following bugs:
+ * Correctly save HiDPI images to HiDPI directories
+ * Scroll the contents of the error message dialog
+
+This release also updates translations for many languages.
+
+Version 3.16.0
+~~~~~~~~~~~~~~
+Released: 2015-03-23
+
+This stable release marks the release of GNOME 3.16!
+
+Version 3.15.92
+~~~~~~~~~~~~~~~
+Released: 2015-03-16
+
+This unstable release adds the following features:
+ * React to theme changes
+ * Rebase the HighContrast theme
+
+This release fixes the following bug:
+ * Fix HiDPI scale factor calculation
+ * Align section headings in all views
+ * Fix 'installed' overlays when using the HighContrast theme
+ * Fall back to showing the top level category when no sub category exists
+ * Fix a crash when using the pending applications feature
+
+This release also updates translations for many languages.
+
+Version 3.15.91
+~~~~~~~~~~~~~~~
+Released: 2015-03-02
+
+This unstable release adds the following features:
+ * Enable kinetic scrolling in updates dialog
+
+This release fixes the following bug:
+ * Always ensure that the back entry focus widget is valid
+ * Don't show small screenshots on HiDPI hardware
+ * Fix a crash when starting GNOME Software for the first time
+ * Only show compatible projects when getting the featured list
+
+Version 3.15.90
+~~~~~~~~~~~~~~~
+Released: 2015-02-16
+
+This unstable release adds the following features:
+ * Add a new panel for displaying session service results
+ * Add a new version of the Modify interface
+ * Require AppData for all available packages
+
+This release fixes the following bug:
+ * Use the new mockups for the 3rd party source install dialogs
+
+Version 3.15.4
+~~~~~~~~~~~~~~
+Released: 2015-01-19
+
+This unstable release adds the following features:
+ * Fix searching with very small search terms
+
+This release fixes the following bugs:
+ * Do case-insensitive searching of suitable keywords
+ * Fix a crash in the screenshot loader
+ * Fix a crash when clicking the back button
+ * Fix searching for keyworks with special chars
+ * Show an error message when we fail to load details about a local file
+
+Version 3.15.2
+~~~~~~~~~~~~~~
+Released: 2014-11-24
+
+This unstable release adds the following features:
+ * Show a blurred low-resolution screenshot while loading the HiDPI one
+
+This release fixes the following bugs:
+ * Do not show a random white line above the star rating widget
+ * Do not show empty app boxes if no popular results are available
+ * Do not try to download local web-app icons
+ * Use blue stars for the user-ratings rather than gold

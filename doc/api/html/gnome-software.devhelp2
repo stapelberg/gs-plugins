@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<book xmlns="http://www.devhelp.net/book" title="GNOME Software Reference Manual" link="index.html" author="" name="gnome-software" version="2" language="c">
+  <chapters>
+    <sub name="GNOME Software Plugin Tutorial" link="plugins.html"/>
+    <sub name="GNOME Software Plugin API" link="api.html">
+      <sub name="GsAppList" link="GsAppList.html"/>
+      <sub name="GsApp" link="GsApp.html"/>
+      <sub name="gs-category" link="gnome-software-gs-category.html"/>
+      <sub name="GsAuth" link="gnome-software-GsAuth.html"/>
+      <sub name="GsOsRelease" link="GsOsRelease.html"/>
+      <sub name="GsPlugin Helpers" link="GsPlugin.html"/>
+      <sub name="GsPlugin Exports" link="gnome-software-GsPlugin-Exports.html"/>
+      <sub name="GsUtils" link="gnome-software-GsUtils.html"/>
+    </sub>
+  </chapters>
+  <functions>
+    <keyword type="function" name="gs_app_list_new ()" link="GsAppList.html#gs-app-list-new" since="3.22"/>
+    <keyword type="function" name="gs_app_list_add ()" link="GsAppList.html#gs-app-list-add" since="3.22"/>
+    <keyword type="function" name="gs_app_list_index ()" link="GsAppList.html#gs-app-list-index" since="3.22"/>
+    <keyword type="function" name="gs_app_list_lookup ()" link="GsAppList.html#gs-app-list-lookup" since="3.22"/>
+    <keyword type="function" name="gs_app_list_length ()" link="GsAppList.html#gs-app-list-length" since="3.22"/>
+    <keyword type="macro" name="GS_TYPE_APP_LIST" link="GsAppList.html#GS-TYPE-APP-LIST:CAPS"/>
+    <keyword type="struct" name="GsAppList" link="GsAppList.html#GsAppList-struct"/>
+    <keyword type="function" name="gs_app_new ()" link="GsApp.html#gs-app-new" since="3.22"/>
+    <keyword type="function" name="gs_app_new_from_unique_id ()" link="GsApp.html#gs-app-new-from-unique-id" since="3.22"/>
+    <keyword type="function" name="gs_app_to_string ()" link="GsApp.html#gs-app-to-string" since="3.22"/>
+    <keyword type="function" name="gs_app_get_id ()" link="GsApp.html#gs-app-get-id" since="3.22"/>
+    <keyword type="function" name="gs_app_set_id ()" link="GsApp.html#gs-app-set-id"/>
+    <keyword type="function" name="gs_app_get_kind ()" link="GsApp.html#gs-app-get-kind" since="3.22"/>
+    <keyword type="function" name="gs_app_set_kind ()" link="GsApp.html#gs-app-set-kind" since="3.22"/>
+    <keyword type="function" name="gs_app_get_state ()" link="GsApp.html#gs-app-get-state" since="3.22"/>
+    <keyword type="function" name="gs_app_set_state ()" link="GsApp.html#gs-app-set-state" since="3.22"/>
+    <keyword type="function" name="gs_app_get_scope ()" link="GsApp.html#gs-app-get-scope" since="3.22"/>
+    <keyword type="function" name="gs_app_set_scope ()" link="GsApp.html#gs-app-set-scope" since="3.22"/>
+    <keyword type="function" name="gs_app_get_bundle_kind ()" link="GsApp.html#gs-app-get-bundle-kind" since="3.22"/>
+    <keyword type="function" name="gs_app_set_bundle_kind ()" link="GsApp.html#gs-app-set-bundle-kind" since="3.22"/>
+    <keyword type="function" name="gs_app_set_state_recover ()" link="GsApp.html#gs-app-set-state-recover" since="3.22"/>
+    <keyword type="function" name="gs_app_get_progress ()" link="GsApp.html#gs-app-get-progress" since="3.22"/>
+    <keyword type="function" name="gs_app_set_progress ()" link="GsApp.html#gs-app-set-progress" since="3.22"/>
+    <keyword type="function" name="gs_app_get_unique_id ()" link="GsApp.html#gs-app-get-unique-id" since="3.22"/>
+    <keyword type="function" name="gs_app_get_branch ()" link="GsApp.html#gs-app-get-branch" since="3.22"/>
+    <keyword type="function" name="gs_app_set_branch ()" link="GsApp.html#gs-app-set-branch" since="3.22"/>
+    <keyword type="function" name="gs_app_get_name ()" link="GsApp.html#gs-app-get-name" since="3.22"/>
+    <keyword type="function" name="gs_app_set_name ()" link="GsApp.html#gs-app-set-name" since="3.22"/>
+    <keyword type="function" name="gs_app_get_source_default ()" link="GsApp.html#gs-app-get-source-default" since="3.22"/>
+    <keyword type="function" name="gs_app_add_source ()" link="GsApp.html#gs-app-add-source" since="3.22"/>
+    <keyword type="function" name="gs_app_get_sources ()" link="GsApp.html#gs-app-get-sources" since="3.22"/>
+    <keyword type="function" name="gs_app_set_sources ()" link="GsApp.html#gs-app-set-sources" since="3.22"/>
+    <keyword type="function" name="gs_app_get_source_id_default ()" link="GsApp.html#gs-app-get-source-id-default" since="3.22"/>
+    <keyword type="function" name="gs_app_add_source_id ()" link="GsApp.html#gs-app-add-source-id" since="3.22"/>
+    <keyword type="function" name="gs_app_get_source_ids ()" link="GsApp.html#gs-app-get-source-ids" since="3.22"/>
+    <keyword type="function" name="gs_app_set_source_ids ()" link="GsApp.html#gs-app-set-source-ids" since="3.22"/>
+    <keyword type="function" name="gs_app_clear_source_ids ()" link="GsApp.html#gs-app-clear-source-ids" since="3.22"/>
+    <keyword type="function" name="gs_app_get_project_group ()" link="GsApp.html#gs-app-get-project-group" since="3.22"/>
+    <keyword type="function" name="gs_app_set_project_group ()" link="GsApp.html#gs-app-set-project-group" since="3.22"/>
+    <keyword type="function" name="gs_app_get_version ()" link="GsApp.html#gs-app-get-version" since="3.22"/>
+    <keyword type="function" name="gs_app_get_version_ui ()" link="GsApp.html#gs-app-get-version-ui" since="3.22"/>
+    <keyword type="function" name="gs_app_set_version ()" link="GsApp.html#gs-app-set-version" since="3.22"/>
+    <keyword type="function" name="gs_app_get_summary ()" link="GsApp.html#gs-app-get-summary" since="3.22"/>
+    <keyword type="function" name="gs_app_set_summary ()" link="GsApp.html#gs-app-set-summary" since="3.22"/>
+    <keyword type="function" name="gs_app_get_summary_missing ()" link="GsApp.html#gs-app-get-summary-missing" since="3.22"/>
+    <keyword type="function" name="gs_app_set_summary_missing ()" link="GsApp.html#gs-app-set-summary-missing" since="3.22"/>
+    <keyword type="function" name="gs_app_get_description ()" link="GsApp.html#gs-app-get-description" since="3.22"/>
+    <keyword type="function" name="gs_app_set_description ()" link="GsApp.html#gs-app-set-description" since="3.22"/>
+    <keyword type="function" name="gs_app_get_url ()" link="GsApp.html#gs-app-get-url" since="3.22"/>
+    <keyword type="function" name="gs_app_set_url ()" link="GsApp.html#gs-app-set-url" since="3.22"/>
+    <keyword type="function" name="gs_app_get_license ()" link="GsApp.html#gs-app-get-license" since="3.22"/>
+    <keyword type="function" name="gs_app_get_license_is_free ()" link="GsApp.html#gs-app-get-license-is-free" since="3.22"/>
+    <keyword type="function" name="gs_app_set_license ()" link="GsApp.html#gs-app-set-license" since="3.22"/>
+    <keyword type="function" name="gs_app_get_menu_path ()" link="GsApp.html#gs-app-get-menu-path" since="3.22"/>
+    <keyword type="function" name="gs_app_set_menu_path ()" link="GsApp.html#gs-app-set-menu-path" since="3.22"/>
+    <keyword type="function" name="gs_app_get_origin ()" link="GsApp.html#gs-app-get-origin" since="3.22"/>
+    <keyword type="function" name="gs_app_set_origin ()" link="GsApp.html#gs-app-set-origin" since="3.22"/>
+    <keyword type="function" name="gs_app_get_origin_ui ()" link="GsApp.html#gs-app-get-origin-ui" since="3.22"/>
+    <keyword type="function" name="gs_app_set_origin_ui ()" link="GsApp.html#gs-app-set-origin-ui" since="3.22"/>
+    <keyword type="function" name="gs_app_get_origin_hostname ()" link="GsApp.html#gs-app-get-origin-hostname" since="3.22"/>
+    <keyword type="function" name="gs_app_set_origin_hostname ()" link="GsApp.html#gs-app-set-origin-hostname" since="3.22"/>
+    <keyword type="function" name="gs_app_get_screenshots ()" link="GsApp.html#gs-app-get-screenshots" since="3.22"/>
+    <keyword type="function" name="gs_app_add_screenshot ()" link="GsApp.html#gs-app-add-screenshot" since="3.22"/>
+    <keyword type="function" name="gs_app_get_update_version ()" link="GsApp.html#gs-app-get-update-version" since="3.22"/>
+    <keyword type="function" name="gs_app_get_update_version_ui ()" link="GsApp.html#gs-app-get-update-version-ui" since="3.22"/>
+    <keyword type="function" name="gs_app_set_update_version ()" link="GsApp.html#gs-app-set-update-version" since="3.22"/>
+    <keyword type="function" name="gs_app_get_update_details ()" link="GsApp.html#gs-app-get-update-details" since="3.22"/>
+    <keyword type="function" name="gs_app_set_update_details ()" link="GsApp.html#gs-app-set-update-details" since="3.22"/>
+    <keyword type="function" name="gs_app_get_update_urgency ()" link="GsApp.html#gs-app-get-update-urgency" since="3.22"/>
+    <keyword type="function" name="gs_app_set_update_urgency ()" link="GsApp.html#gs-app-set-update-urgency" since="3.22"/>
+    <keyword type="function" name="gs_app_get_management_plugin ()" link="GsApp.html#gs-app-get-management-plugin" since="3.22"/>
+    <keyword type="function" name="gs_app_set_management_plugin ()" link="GsApp.html#gs-app-set-management-plugin" since="3.22"/>
+    <keyword type="function" name="gs_app_get_pixbuf ()" link="GsApp.html#gs-app-get-pixbuf" since="3.22"/>
+    <keyword type="function" name="gs_app_set_pixbuf ()" link="GsApp.html#gs-app-set-pixbuf" since="3.22"/>
+    <keyword type="function" name="gs_app_get_icons ()" link="GsApp.html#gs-app-get-icons" since="3.22"/>
+    <keyword type="function" name="gs_app_add_icon ()" link="GsApp.html#gs-app-add-icon" since="3.22"/>
+    <keyword type="function" name="gs_app_get_local_file ()" link="GsApp.html#gs-app-get-local-file" since="3.22"/>
+    <keyword type="function" name="gs_app_set_local_file ()" link="GsApp.html#gs-app-set-local-file" since="3.22"/>
+    <keyword type="function" name="gs_app_get_runtime ()" link="GsApp.html#gs-app-get-runtime" since="3.22"/>
+    <keyword type="function" name="gs_app_set_runtime ()" link="GsApp.html#gs-app-set-runtime" since="3.22"/>
+    <keyword type="function" name="gs_app_get_metadata_item ()" link="GsApp.html#gs-app-get-metadata-item" since="3.22"/>
+    <keyword type="function" name="gs_app_set_metadata ()" link="GsApp.html#gs-app-set-metadata" since="3.22"/>
+    <keyword type="function" name="gs_app_get_rating ()" link="GsApp.html#gs-app-get-rating" since="3.22"/>
+    <keyword type="function" name="gs_app_set_rating ()" link="GsApp.html#gs-app-set-rating" since="3.22"/>
+    <keyword type="function" name="gs_app_get_review_ratings ()" link="GsApp.html#gs-app-get-review-ratings" since="3.22"/>
+    <keyword type="function" name="gs_app_set_review_ratings ()" link="GsApp.html#gs-app-set-review-ratings" since="3.22"/>
+    <keyword type="function" name="gs_app_get_reviews ()" link="GsApp.html#gs-app-get-reviews" since="3.22"/>
+    <keyword type="function" name="gs_app_add_review ()" link="GsApp.html#gs-app-add-review" since="3.22"/>
+    <keyword type="function" name="gs_app_remove_review ()" link="GsApp.html#gs-app-remove-review" since="3.22"/>
+    <keyword type="function" name="gs_app_get_provides ()" link="GsApp.html#gs-app-get-provides" since="3.22"/>
+    <keyword type="function" name="gs_app_add_provide ()" link="GsApp.html#gs-app-add-provide" since="3.22"/>
+    <keyword type="function" name="gs_app_get_size_installed ()" link="GsApp.html#gs-app-get-size-installed" since="3.22"/>
+    <keyword type="function" name="gs_app_set_size_installed ()" link="GsApp.html#gs-app-set-size-installed" since="3.22"/>
+    <keyword type="function" name="gs_app_get_size_download ()" link="GsApp.html#gs-app-get-size-download" since="3.22"/>
+    <keyword type="function" name="gs_app_set_size_download ()" link="GsApp.html#gs-app-set-size-download" since="3.22"/>
+    <keyword type="function" name="gs_app_get_addons ()" link="GsApp.html#gs-app-get-addons" since="3.22"/>
+    <keyword type="function" name="gs_app_add_addon ()" link="GsApp.html#gs-app-add-addon" since="3.22"/>
+    <keyword type="function" name="gs_app_get_related ()" link="GsApp.html#gs-app-get-related" since="3.22"/>
+    <keyword type="function" name="gs_app_add_related ()" link="GsApp.html#gs-app-add-related" since="3.22"/>
+    <keyword type="function" name="gs_app_get_history ()" link="GsApp.html#gs-app-get-history" since="3.22"/>
+    <keyword type="function" name="gs_app_add_history ()" link="GsApp.html#gs-app-add-history" since="3.22"/>
+    <keyword type="function" name="gs_app_get_install_date ()" link="GsApp.html#gs-app-get-install-date" since="3.22"/>
+    <keyword type="function" name="gs_app_set_install_date ()" link="GsApp.html#gs-app-set-install-date" since="3.22"/>
+    <keyword type="function" name="gs_app_get_categories ()" link="GsApp.html#gs-app-get-categories" since="3.22"/>
+    <keyword type="function" name="gs_app_set_categories ()" link="GsApp.html#gs-app-set-categories" since="3.22"/>
+    <keyword type="function" name="gs_app_get_key_colors ()" link="GsApp.html#gs-app-get-key-colors" since="3.22"/>
+    <keyword type="function" name="gs_app_set_key_colors ()" link="GsApp.html#gs-app-set-key-colors" since="3.22"/>
+    <keyword type="function" name="gs_app_add_key_color ()" link="GsApp.html#gs-app-add-key-color" since="3.22"/>
+    <keyword type="function" name="gs_app_has_category ()" link="GsApp.html#gs-app-has-category" since="3.22"/>
+    <keyword type="function" name="gs_app_add_category ()" link="GsApp.html#gs-app-add-category" since="3.22"/>
+    <keyword type="function" name="gs_app_get_keywords ()" link="GsApp.html#gs-app-get-keywords" since="3.22"/>
+    <keyword type="function" name="gs_app_set_keywords ()" link="GsApp.html#gs-app-set-keywords" since="3.22"/>
+    <keyword type="function" name="gs_app_add_kudo ()" link="GsApp.html#gs-app-add-kudo" since="3.22"/>
+    <keyword type="function" name="gs_app_has_kudo ()" link="GsApp.html#gs-app-has-kudo" since="3.22"/>
+    <keyword type="function" name="gs_app_get_kudos ()" link="GsApp.html#gs-app-get-kudos" since="3.22"/>
+    <keyword type="function" name="gs_app_get_kudos_percentage ()" link="GsApp.html#gs-app-get-kudos-percentage" since="3.22"/>
+    <keyword type="function" name="gs_app_get_to_be_installed ()" link="GsApp.html#gs-app-get-to-be-installed" since="3.22"/>
+    <keyword type="function" name="gs_app_set_to_be_installed ()" link="GsApp.html#gs-app-set-to-be-installed" since="3.22"/>
+    <keyword type="function" name="gs_app_set_match_value ()" link="GsApp.html#gs-app-set-match-value" since="3.22"/>
+    <keyword type="function" name="gs_app_get_match_value ()" link="GsApp.html#gs-app-get-match-value" since="3.22"/>
+    <keyword type="function" name="gs_app_has_quirk ()" link="GsApp.html#gs-app-has-quirk" since="3.22"/>
+    <keyword type="function" name="gs_app_add_quirk ()" link="GsApp.html#gs-app-add-quirk" since="3.22"/>
+    <keyword type="function" name="gs_app_remove_quirk ()" link="GsApp.html#gs-app-remove-quirk" since="3.22"/>
+    <keyword type="function" name="gs_app_is_installed ()" link="GsApp.html#gs-app-is-installed" since="3.22"/>
+    <keyword type="function" name="gs_app_is_updatable ()" link="GsApp.html#gs-app-is-updatable" since="3.22"/>
+    <keyword type="macro" name="GS_TYPE_APP" link="GsApp.html#GS-TYPE-APP:CAPS"/>
+    <keyword type="enum" name="enum GsAppKudo" link="GsApp.html#GsAppKudo"/>
+    <keyword type="macro" name="GS_APP_INSTALL_DATE_UNSET" link="GsApp.html#GS-APP-INSTALL-DATE-UNSET:CAPS"/>
+    <keyword type="macro" name="GS_APP_INSTALL_DATE_UNKNOWN" link="GsApp.html#GS-APP-INSTALL-DATE-UNKNOWN:CAPS"/>
+    <keyword type="macro" name="GS_APP_SIZE_UNKNOWABLE" link="GsApp.html#GS-APP-SIZE-UNKNOWABLE:CAPS"/>
+    <keyword type="enum" name="enum GsAppQuality" link="GsApp.html#GsAppQuality"/>
+    <keyword type="macro" name="AS_APP_QUIRK_REMOVABLE_HARDWARE" link="GsApp.html#AS-APP-QUIRK-REMOVABLE-HARDWARE:CAPS"/>
+    <keyword type="struct" name="GsApp" link="GsApp.html#GsApp-struct"/>
+    <keyword type="property" name="The “description” property" link="GsApp.html#GsApp--description"/>
+    <keyword type="property" name="The “id” property" link="GsApp.html#GsApp--id"/>
+    <keyword type="property" name="The “install-date” property" link="GsApp.html#GsApp--install-date"/>
+    <keyword type="property" name="The “kind” property" link="GsApp.html#GsApp--kind"/>
+    <keyword type="property" name="The “name” property" link="GsApp.html#GsApp--name"/>
+    <keyword type="property" name="The “progress” property" link="GsApp.html#GsApp--progress"/>
+    <keyword type="property" name="The “quirk” property" link="GsApp.html#GsApp--quirk"/>
+    <keyword type="property" name="The “rating” property" link="GsApp.html#GsApp--rating"/>
+    <keyword type="property" name="The “state” property" link="GsApp.html#GsApp--state"/>
+    <keyword type="property" name="The “summary” property" link="GsApp.html#GsApp--summary"/>
+    <keyword type="property" name="The “version” property" link="GsApp.html#GsApp--version"/>
+    <keyword type="function" name="gs_category_new ()" link="gnome-software-gs-category.html#gs-category-new" since="3.22"/>
+    <keyword type="function" name="gs_category_get_id ()" link="gnome-software-gs-category.html#gs-category-get-id" since="3.22"/>
+    <keyword type="function" name="gs_category_get_parent ()" link="gnome-software-gs-category.html#gs-category-get-parent" since="3.22"/>
+    <keyword type="function" name="gs_category_get_name ()" link="gnome-software-gs-category.html#gs-category-get-name" since="3.22"/>
+    <keyword type="function" name="gs_category_set_name ()" link="gnome-software-gs-category.html#gs-category-set-name" since="3.22"/>
+    <keyword type="function" name="gs_category_get_icon ()" link="gnome-software-gs-category.html#gs-category-get-icon" since="3.22"/>
+    <keyword type="function" name="gs_category_set_icon ()" link="gnome-software-gs-category.html#gs-category-set-icon" since="3.22"/>
+    <keyword type="function" name="gs_category_get_score ()" link="gnome-software-gs-category.html#gs-category-get-score" since="3.22"/>
+    <keyword type="function" name="gs_category_set_score ()" link="gnome-software-gs-category.html#gs-category-set-score" since="3.22"/>
+    <keyword type="function" name="gs_category_get_key_colors ()" link="gnome-software-gs-category.html#gs-category-get-key-colors" since="3.22"/>
+    <keyword type="function" name="gs_category_add_key_color ()" link="gnome-software-gs-category.html#gs-category-add-key-color" since="3.22"/>
+    <keyword type="function" name="gs_category_get_desktop_groups ()" link="gnome-software-gs-category.html#gs-category-get-desktop-groups" since="3.22"/>
+    <keyword type="function" name="gs_category_has_desktop_group ()" link="gnome-software-gs-category.html#gs-category-has-desktop-group" since="3.22"/>
+    <keyword type="function" name="gs_category_add_desktop_group ()" link="gnome-software-gs-category.html#gs-category-add-desktop-group" since="3.22"/>
+    <keyword type="function" name="gs_category_find_child ()" link="gnome-software-gs-category.html#gs-category-find-child" since="3.22"/>
+    <keyword type="function" name="gs_category_get_children ()" link="gnome-software-gs-category.html#gs-category-get-children" since="3.22"/>
+    <keyword type="function" name="gs_category_add_child ()" link="gnome-software-gs-category.html#gs-category-add-child" since="3.22"/>
+    <keyword type="function" name="gs_category_get_size ()" link="gnome-software-gs-category.html#gs-category-get-size" since="3.22"/>
+    <keyword type="function" name="gs_category_increment_size ()" link="gnome-software-gs-category.html#gs-category-increment-size" since="3.22"/>
+    <keyword type="macro" name="GS_TYPE_CATEGORY" link="gnome-software-gs-category.html#GS-TYPE-CATEGORY:CAPS"/>
+    <keyword type="struct" name="GsCategory" link="gnome-software-gs-category.html#GsCategory-struct"/>
+    <keyword type="function" name="gs_auth_new ()" link="gnome-software-GsAuth.html#gs-auth-new"/>
+    <keyword type="function" name="gs_auth_get_provider_id ()" link="gnome-software-GsAuth.html#gs-auth-get-provider-id"/>
+    <keyword type="function" name="gs_auth_get_provider_name ()" link="gnome-software-GsAuth.html#gs-auth-get-provider-name"/>
+    <keyword type="function" name="gs_auth_set_provider_name ()" link="gnome-software-GsAuth.html#gs-auth-set-provider-name"/>
+    <keyword type="function" name="gs_auth_get_provider_logo ()" link="gnome-software-GsAuth.html#gs-auth-get-provider-logo"/>
+    <keyword type="function" name="gs_auth_set_provider_logo ()" link="gnome-software-GsAuth.html#gs-auth-set-provider-logo"/>
+    <keyword type="function" name="gs_auth_get_provider_uri ()" link="gnome-software-GsAuth.html#gs-auth-get-provider-uri"/>
+    <keyword type="function" name="gs_auth_set_provider_uri ()" link="gnome-software-GsAuth.html#gs-auth-set-provider-uri"/>
+    <keyword type="function" name="gs_auth_get_provider_schema ()" link="gnome-software-GsAuth.html#gs-auth-get-provider-schema"/>
+    <keyword type="function" name="gs_auth_set_provider_schema ()" link="gnome-software-GsAuth.html#gs-auth-set-provider-schema"/>
+    <keyword type="function" name="gs_auth_get_username ()" link="gnome-software-GsAuth.html#gs-auth-get-username"/>
+    <keyword type="function" name="gs_auth_set_username ()" link="gnome-software-GsAuth.html#gs-auth-set-username"/>
+    <keyword type="function" name="gs_auth_get_password ()" link="gnome-software-GsAuth.html#gs-auth-get-password"/>
+    <keyword type="function" name="gs_auth_set_password ()" link="gnome-software-GsAuth.html#gs-auth-set-password"/>
+    <keyword type="function" name="gs_auth_get_pin ()" link="gnome-software-GsAuth.html#gs-auth-get-pin"/>
+    <keyword type="function" name="gs_auth_set_pin ()" link="gnome-software-GsAuth.html#gs-auth-set-pin"/>
+    <keyword type="function" name="gs_auth_get_flags ()" link="gnome-software-GsAuth.html#gs-auth-get-flags"/>
+    <keyword type="function" name="gs_auth_set_flags ()" link="gnome-software-GsAuth.html#gs-auth-set-flags"/>
+    <keyword type="function" name="gs_auth_add_flags ()" link="gnome-software-GsAuth.html#gs-auth-add-flags"/>
+    <keyword type="function" name="gs_auth_has_flag ()" link="gnome-software-GsAuth.html#gs-auth-has-flag"/>
+    <keyword type="function" name="gs_auth_get_metadata_item ()" link="gnome-software-GsAuth.html#gs-auth-get-metadata-item"/>
+    <keyword type="function" name="gs_auth_add_metadata ()" link="gnome-software-GsAuth.html#gs-auth-add-metadata"/>
+    <keyword type="function" name="gs_auth_store_load ()" link="gnome-software-GsAuth.html#gs-auth-store-load"/>
+    <keyword type="function" name="gs_auth_store_save ()" link="gnome-software-GsAuth.html#gs-auth-store-save"/>
+    <keyword type="macro" name="GS_TYPE_AUTH" link="gnome-software-GsAuth.html#GS-TYPE-AUTH:CAPS"/>
+    <keyword type="enum" name="enum GsAuthFlags" link="gnome-software-GsAuth.html#GsAuthFlags"/>
+    <keyword type="enum" name="enum GsAuthStoreFlags" link="gnome-software-GsAuth.html#GsAuthStoreFlags"/>
+    <keyword type="struct" name="GsAuth" link="gnome-software-GsAuth.html#GsAuth"/>
+    <keyword type="function" name="gs_os_release_new ()" link="GsOsRelease.html#gs-os-release-new" since="3.22"/>
+    <keyword type="function" name="gs_os_release_get_name ()" link="GsOsRelease.html#gs-os-release-get-name" since="3.22"/>
+    <keyword type="function" name="gs_os_release_get_version ()" link="GsOsRelease.html#gs-os-release-get-version" since="3.22"/>
+    <keyword type="function" name="gs_os_release_get_id ()" link="GsOsRelease.html#gs-os-release-get-id" since="3.22"/>
+    <keyword type="function" name="gs_os_release_get_version_id ()" link="GsOsRelease.html#gs-os-release-get-version-id" since="3.22"/>
+    <keyword type="function" name="gs_os_release_get_pretty_name ()" link="GsOsRelease.html#gs-os-release-get-pretty-name" since="3.22"/>
+    <keyword type="function" name="gs_os_release_get_distro_codename ()" link="GsOsRelease.html#gs-os-release-get-distro-codename" since="3.22"/>
+    <keyword type="macro" name="GS_TYPE_OS_RELEASE" link="GsOsRelease.html#GS-TYPE-OS-RELEASE:CAPS"/>
+    <keyword type="struct" name="GsOsRelease" link="GsOsRelease.html#GsOsRelease-struct"/>
+    <keyword type="function" name="gs_plugin_error_quark ()" link="GsPlugin.html#gs-plugin-error-quark"/>
+    <keyword type="function" name="gs_plugin_alloc_data ()" link="GsPlugin.html#gs-plugin-alloc-data" since="3.22"/>
+    <keyword type="function" name="gs_plugin_get_data ()" link="GsPlugin.html#gs-plugin-get-data" since="3.22"/>
+    <keyword type="function" name="gs_plugin_get_name ()" link="GsPlugin.html#gs-plugin-get-name" since="3.22"/>
+    <keyword type="function" name="gs_plugin_get_enabled ()" link="GsPlugin.html#gs-plugin-get-enabled" since="3.22"/>
+    <keyword type="function" name="gs_plugin_set_enabled ()" link="GsPlugin.html#gs-plugin-set-enabled" since="3.22"/>
+    <keyword type="function" name="gs_plugin_has_flags ()" link="GsPlugin.html#gs-plugin-has-flags" since="3.22"/>
+    <keyword type="function" name="gs_plugin_add_flags ()" link="GsPlugin.html#gs-plugin-add-flags" since="3.22"/>
+    <keyword type="function" name="gs_plugin_remove_flags ()" link="GsPlugin.html#gs-plugin-remove-flags" since="3.22"/>
+    <keyword type="function" name="gs_plugin_get_scale ()" link="GsPlugin.html#gs-plugin-get-scale" since="3.22"/>
+    <keyword type="function" name="gs_plugin_get_locale ()" link="GsPlugin.html#gs-plugin-get-locale" since="3.22"/>
+    <keyword type="function" name="gs_plugin_get_language ()" link="GsPlugin.html#gs-plugin-get-language" since="3.22"/>
+    <keyword type="function" name="gs_plugin_get_profile ()" link="GsPlugin.html#gs-plugin-get-profile" since="3.22"/>
+    <keyword type="function" name="gs_plugin_get_soup_session ()" link="GsPlugin.html#gs-plugin-get-soup-session" since="3.22"/>
+    <keyword type="function" name="gs_plugin_add_auth ()" link="GsPlugin.html#gs-plugin-add-auth" since="3.22"/>
+    <keyword type="function" name="gs_plugin_get_auth_by_id ()" link="GsPlugin.html#gs-plugin-get-auth-by-id" since="3.22"/>
+    <keyword type="function" name="gs_plugin_add_rule ()" link="GsPlugin.html#gs-plugin-add-rule" since="3.22"/>
+    <keyword type="function" name="gs_plugin_download_data ()" link="GsPlugin.html#gs-plugin-download-data" since="3.22"/>
+    <keyword type="function" name="gs_plugin_download_file ()" link="GsPlugin.html#gs-plugin-download-file" since="3.22"/>
+    <keyword type="function" name="gs_plugin_check_distro_id ()" link="GsPlugin.html#gs-plugin-check-distro-id" since="3.22"/>
+    <keyword type="function" name="gs_plugin_cache_lookup ()" link="GsPlugin.html#gs-plugin-cache-lookup" since="3.22"/>
+    <keyword type="function" name="gs_plugin_cache_add ()" link="GsPlugin.html#gs-plugin-cache-add" since="3.22"/>
+    <keyword type="function" name="gs_plugin_cache_remove ()" link="GsPlugin.html#gs-plugin-cache-remove" since="3.22"/>
+    <keyword type="function" name="gs_plugin_cache_invalidate ()" link="GsPlugin.html#gs-plugin-cache-invalidate" since="3.22"/>
+    <keyword type="function" name="gs_plugin_status_update ()" link="GsPlugin.html#gs-plugin-status-update" since="3.22"/>
+    <keyword type="function" name="gs_plugin_app_launch ()" link="GsPlugin.html#gs-plugin-app-launch" since="3.22"/>
+    <keyword type="function" name="gs_plugin_updates_changed ()" link="GsPlugin.html#gs-plugin-updates-changed" since="3.22"/>
+    <keyword type="function" name="gs_plugin_reload ()" link="GsPlugin.html#gs-plugin-reload" since="3.22"/>
+    <keyword type="function" name="gs_plugin_status_to_string ()" link="GsPlugin.html#gs-plugin-status-to-string" since="3.22"/>
+    <keyword type="macro" name="GS_TYPE_PLUGIN" link="GsPlugin.html#GS-TYPE-PLUGIN:CAPS"/>
+    <keyword type="struct" name="struct GsPluginClass" link="GsPlugin.html#GsPluginClass"/>
+    <keyword type="typedef" name="GsPluginData" link="GsPlugin.html#GsPluginData"/>
+    <keyword type="enum" name="enum GsPluginStatus" link="GsPlugin.html#GsPluginStatus"/>
+    <keyword type="macro" name="GS_PLUGIN_FLAGS_NONE" link="GsPlugin.html#GS-PLUGIN-FLAGS-NONE:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_FLAGS_RUNNING_SELF" link="GsPlugin.html#GS-PLUGIN-FLAGS-RUNNING-SELF:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_FLAGS_RUNNING_OTHER" link="GsPlugin.html#GS-PLUGIN-FLAGS-RUNNING-OTHER:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_FLAGS_EXCLUSIVE" link="GsPlugin.html#GS-PLUGIN-FLAGS-EXCLUSIVE:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_FLAGS_RECENT" link="GsPlugin.html#GS-PLUGIN-FLAGS-RECENT:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_FLAGS_GLOBAL_CACHE" link="GsPlugin.html#GS-PLUGIN-FLAGS-GLOBAL-CACHE:CAPS"/>
+    <keyword type="typedef" name="GsPluginFlags" link="GsPlugin.html#GsPluginFlags"/>
+    <keyword type="enum" name="enum GsPluginError" link="GsPlugin.html#GsPluginError"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_DEFAULT" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-DEFAULT:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_USE_HISTORY" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-USE-HISTORY:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-LICENSE:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_URL" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-URL:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_DESCRIPTION" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-DESCRIPTION:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_SIZE" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-SIZE:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_RATING" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-RATING:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_VERSION" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-VERSION:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_HISTORY" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-HISTORY:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_SETUP_ACTION" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-SETUP-ACTION:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPDATE_DETAILS" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-UPDATE-DETAILS:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-ORIGIN:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_RELATED" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-RELATED:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_MENU_PATH" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-MENU-PATH:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_ADDONS" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-ADDONS:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_ALLOW_PACKAGES" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-ALLOW-PACKAGES:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPDATE_SEVERITY" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-UPDATE-SEVERITY:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPGRADE_REMOVED" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-UPGRADE-REMOVED:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_PROVENANCE" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-PROVENANCE:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_REVIEWS" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-REVIEWS:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_REVIEW_RATINGS" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-REVIEW-RATINGS:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_KEY_COLORS" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-KEY-COLORS:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_ICON" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-ICON:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_PERMISSIONS" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-PERMISSIONS:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN_HOSTNAME" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-ORIGIN-HOSTNAME:CAPS"/>
+    <keyword type="macro" name="GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN_UI" link="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-ORIGIN-UI:CAPS"/>
+    <keyword type="typedef" name="GsPluginRefineFlags" link="GsPlugin.html#GsPluginRefineFlags"/>
+    <keyword type="enum" name="enum GsPluginRefreshFlags" link="GsPlugin.html#GsPluginRefreshFlags"/>
+    <keyword type="enum" name="enum GsPluginRule" link="GsPlugin.html#GsPluginRule"/>
+    <keyword type="macro" name="GS_PLUGIN_ERROR" link="GsPlugin.html#GS-PLUGIN-ERROR:CAPS"/>
+    <keyword type="struct" name="GsPlugin" link="GsPlugin.html#GsPlugin-struct"/>
+    <keyword type="property" name="The “flags” property" link="GsPlugin.html#GsPlugin--flags"/>
+    <keyword type="signal" name="The “reload” signal" link="GsPlugin.html#GsPlugin-reload"/>
+    <keyword type="signal" name="The “status-changed” signal" link="GsPlugin.html#GsPlugin-status-changed"/>
+    <keyword type="signal" name="The “updates-changed” signal" link="GsPlugin.html#GsPlugin-updates-changed"/>
+    <keyword type="function" name="gs_plugin_initialize ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-initialize"/>
+    <keyword type="function" name="gs_plugin_destroy ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-destroy"/>
+    <keyword type="function" name="gs_plugin_adopt_app ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-adopt-app"/>
+    <keyword type="function" name="gs_plugin_add_search ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-search"/>
+    <keyword type="function" name="gs_plugin_add_search_files ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-search-files"/>
+    <keyword type="function" name="gs_plugin_add_search_what_provides ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-search-what-provides"/>
+    <keyword type="function" name="gs_plugin_setup ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-setup"/>
+    <keyword type="function" name="gs_plugin_add_installed ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-installed"/>
+    <keyword type="function" name="gs_plugin_add_updates ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-updates"/>
+    <keyword type="function" name="gs_plugin_add_distro_upgrades ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-distro-upgrades"/>
+    <keyword type="function" name="gs_plugin_add_sources ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-sources"/>
+    <keyword type="function" name="gs_plugin_add_updates_historical ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-updates-historical"/>
+    <keyword type="function" name="gs_plugin_add_categories ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-categories"/>
+    <keyword type="function" name="gs_plugin_add_category_apps ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-category-apps"/>
+    <keyword type="function" name="gs_plugin_add_popular ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-popular"/>
+    <keyword type="function" name="gs_plugin_add_featured ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-featured"/>
+    <keyword type="function" name="gs_plugin_add_unvoted_reviews ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-unvoted-reviews"/>
+    <keyword type="function" name="gs_plugin_refine ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-refine"/>
+    <keyword type="function" name="gs_plugin_refine_app ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-refine-app"/>
+    <keyword type="function" name="gs_plugin_refine_wildcard ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-refine-wildcard"/>
+    <keyword type="function" name="gs_plugin_launch ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-launch"/>
+    <keyword type="function" name="gs_plugin_add_shortcut ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-add-shortcut"/>
+    <keyword type="function" name="gs_plugin_remove_shortcut ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-remove-shortcut"/>
+    <keyword type="function" name="gs_plugin_update_cancel ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-update-cancel"/>
+    <keyword type="function" name="gs_plugin_app_install ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-app-install"/>
+    <keyword type="function" name="gs_plugin_app_remove ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-app-remove"/>
+    <keyword type="function" name="gs_plugin_app_set_rating ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-app-set-rating"/>
+    <keyword type="function" name="gs_plugin_update_app ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-update-app"/>
+    <keyword type="function" name="gs_plugin_app_upgrade_download ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-app-upgrade-download"/>
+    <keyword type="function" name="gs_plugin_app_upgrade_trigger ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-app-upgrade-trigger"/>
+    <keyword type="function" name="gs_plugin_review_submit ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-review-submit"/>
+    <keyword type="function" name="gs_plugin_review_upvote ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-review-upvote"/>
+    <keyword type="function" name="gs_plugin_review_downvote ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-review-downvote"/>
+    <keyword type="function" name="gs_plugin_review_report ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-review-report"/>
+    <keyword type="function" name="gs_plugin_review_remove ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-review-remove"/>
+    <keyword type="function" name="gs_plugin_review_dismiss ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-review-dismiss"/>
+    <keyword type="function" name="gs_plugin_refresh ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-refresh"/>
+    <keyword type="function" name="gs_plugin_file_to_app ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-file-to-app"/>
+    <keyword type="function" name="gs_plugin_update ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-update"/>
+    <keyword type="function" name="gs_plugin_auth_login ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-auth-login"/>
+    <keyword type="function" name="gs_plugin_auth_logout ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-auth-logout"/>
+    <keyword type="function" name="gs_plugin_auth_lost_password ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-auth-lost-password"/>
+    <keyword type="function" name="gs_plugin_auth_register ()" link="gnome-software-GsPlugin-Exports.html#gs-plugin-auth-register"/>
+    <keyword type="function" name="gs_utils_get_file_age ()" link="gnome-software-GsUtils.html#gs-utils-get-file-age"/>
+    <keyword type="function" name="gs_utils_get_content_type ()" link="gnome-software-GsUtils.html#gs-utils-get-content-type"/>
+    <keyword type="function" name="gs_utils_symlink ()" link="gnome-software-GsUtils.html#gs-utils-symlink"/>
+    <keyword type="function" name="gs_utils_unlink ()" link="gnome-software-GsUtils.html#gs-utils-unlink"/>
+    <keyword type="function" name="gs_mkdir_parent ()" link="gnome-software-GsUtils.html#gs-mkdir-parent"/>
+    <keyword type="function" name="gs_utils_get_cache_filename ()" link="gnome-software-GsUtils.html#gs-utils-get-cache-filename"/>
+    <keyword type="function" name="gs_utils_get_user_hash ()" link="gnome-software-GsUtils.html#gs-utils-get-user-hash"/>
+    <keyword type="function" name="gs_utils_get_permission ()" link="gnome-software-GsUtils.html#gs-utils-get-permission"/>
+    <keyword type="function" name="gs_utils_strv_fnmatch ()" link="gnome-software-GsUtils.html#gs-utils-strv-fnmatch"/>
+    <keyword type="function" name="gs_utils_get_desktop_app_info ()" link="gnome-software-GsUtils.html#gs-utils-get-desktop-app-info"/>
+    <keyword type="function" name="gs_utils_rmtree ()" link="gnome-software-GsUtils.html#gs-utils-rmtree"/>
+    <keyword type="function" name="gs_utils_get_wilson_rating ()" link="gnome-software-GsUtils.html#gs-utils-get-wilson-rating"/>
+    <keyword type="enum" name="enum GsUtilsCacheFlags" link="gnome-software-GsUtils.html#GsUtilsCacheFlags"/>
+    <keyword type="constant" name="GS_APP_KUDO_MY_LANGUAGE" link="GsApp.html#GS-APP-KUDO-MY-LANGUAGE:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_RECENT_RELEASE" link="GsApp.html#GS-APP-KUDO-RECENT-RELEASE:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_FEATURED_RECOMMENDED" link="GsApp.html#GS-APP-KUDO-FEATURED-RECOMMENDED:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_MODERN_TOOLKIT" link="GsApp.html#GS-APP-KUDO-MODERN-TOOLKIT:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_SEARCH_PROVIDER" link="GsApp.html#GS-APP-KUDO-SEARCH-PROVIDER:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_INSTALLS_USER_DOCS" link="GsApp.html#GS-APP-KUDO-INSTALLS-USER-DOCS:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_USES_NOTIFICATIONS" link="GsApp.html#GS-APP-KUDO-USES-NOTIFICATIONS:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_HAS_KEYWORDS" link="GsApp.html#GS-APP-KUDO-HAS-KEYWORDS:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_USES_APP_MENU" link="GsApp.html#GS-APP-KUDO-USES-APP-MENU:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_HAS_SCREENSHOTS" link="GsApp.html#GS-APP-KUDO-HAS-SCREENSHOTS:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_POPULAR" link="GsApp.html#GS-APP-KUDO-POPULAR:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_PERFECT_SCREENSHOTS" link="GsApp.html#GS-APP-KUDO-PERFECT-SCREENSHOTS:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_HIGH_CONTRAST" link="GsApp.html#GS-APP-KUDO-HIGH-CONTRAST:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_HI_DPI_ICON" link="GsApp.html#GS-APP-KUDO-HI-DPI-ICON:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_SANDBOXED" link="GsApp.html#GS-APP-KUDO-SANDBOXED:CAPS"/>
+    <keyword type="constant" name="GS_APP_KUDO_SANDBOXED_SECURE" link="GsApp.html#GS-APP-KUDO-SANDBOXED-SECURE:CAPS"/>
+    <keyword type="constant" name="GS_APP_QUALITY_UNKNOWN" link="GsApp.html#GS-APP-QUALITY-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="GS_APP_QUALITY_LOWEST" link="GsApp.html#GS-APP-QUALITY-LOWEST:CAPS"/>
+    <keyword type="constant" name="GS_APP_QUALITY_NORMAL" link="GsApp.html#GS-APP-QUALITY-NORMAL:CAPS"/>
+    <keyword type="constant" name="GS_APP_QUALITY_HIGHEST" link="GsApp.html#GS-APP-QUALITY-HIGHEST:CAPS"/>
+    <keyword type="constant" name="GS_AUTH_FLAG_NONE" link="gnome-software-GsAuth.html#GS-AUTH-FLAG-NONE:CAPS"/>
+    <keyword type="constant" name="GS_AUTH_FLAG_VALID" link="gnome-software-GsAuth.html#GS-AUTH-FLAG-VALID:CAPS"/>
+    <keyword type="constant" name="GS_AUTH_FLAG_REMEMBER" link="gnome-software-GsAuth.html#GS-AUTH-FLAG-REMEMBER:CAPS"/>
+    <keyword type="constant" name="GS_AUTH_STORE_FLAG_NONE" link="gnome-software-GsAuth.html#GS-AUTH-STORE-FLAG-NONE:CAPS"/>
+    <keyword type="constant" name="GS_AUTH_STORE_FLAG_USERNAME" link="gnome-software-GsAuth.html#GS-AUTH-STORE-FLAG-USERNAME:CAPS"/>
+    <keyword type="constant" name="GS_AUTH_STORE_FLAG_PASSWORD" link="gnome-software-GsAuth.html#GS-AUTH-STORE-FLAG-PASSWORD:CAPS"/>
+    <keyword type="constant" name="GS_AUTH_STORE_FLAG_METADATA" link="gnome-software-GsAuth.html#GS-AUTH-STORE-FLAG-METADATA:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_STATUS_UNKNOWN" link="GsPlugin.html#GS-PLUGIN-STATUS-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_STATUS_WAITING" link="GsPlugin.html#GS-PLUGIN-STATUS-WAITING:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_STATUS_FINISHED" link="GsPlugin.html#GS-PLUGIN-STATUS-FINISHED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_STATUS_SETUP" link="GsPlugin.html#GS-PLUGIN-STATUS-SETUP:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_STATUS_DOWNLOADING" link="GsPlugin.html#GS-PLUGIN-STATUS-DOWNLOADING:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_STATUS_QUERYING" link="GsPlugin.html#GS-PLUGIN-STATUS-QUERYING:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_STATUS_INSTALLING" link="GsPlugin.html#GS-PLUGIN-STATUS-INSTALLING:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_STATUS_REMOVING" link="GsPlugin.html#GS-PLUGIN-STATUS-REMOVING:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_FAILED" link="GsPlugin.html#GS-PLUGIN-ERROR-FAILED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_NOT_SUPPORTED" link="GsPlugin.html#GS-PLUGIN-ERROR-NOT-SUPPORTED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_CANCELLED" link="GsPlugin.html#GS-PLUGIN-ERROR-CANCELLED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_NO_NETWORK" link="GsPlugin.html#GS-PLUGIN-ERROR-NO-NETWORK:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_NO_SECURITY" link="GsPlugin.html#GS-PLUGIN-ERROR-NO-SECURITY:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_NO_SPACE" link="GsPlugin.html#GS-PLUGIN-ERROR-NO-SPACE:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_AUTH_REQUIRED" link="GsPlugin.html#GS-PLUGIN-ERROR-AUTH-REQUIRED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_AUTH_INVALID" link="GsPlugin.html#GS-PLUGIN-ERROR-AUTH-INVALID:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_PIN_REQUIRED" link="GsPlugin.html#GS-PLUGIN-ERROR-PIN-REQUIRED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_ACCOUNT_SUSPENDED" link="GsPlugin.html#GS-PLUGIN-ERROR-ACCOUNT-SUSPENDED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_ACCOUNT_DEACTIVATED" link="GsPlugin.html#GS-PLUGIN-ERROR-ACCOUNT-DEACTIVATED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_PLUGIN_DEPSOLVE_FAILED" link="GsPlugin.html#GS-PLUGIN-ERROR-PLUGIN-DEPSOLVE-FAILED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_DOWNLOAD_FAILED" link="GsPlugin.html#GS-PLUGIN-ERROR-DOWNLOAD-FAILED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_WRITE_FAILED" link="GsPlugin.html#GS-PLUGIN-ERROR-WRITE-FAILED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_INVALID_FORMAT" link="GsPlugin.html#GS-PLUGIN-ERROR-INVALID-FORMAT:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_ERROR_DELETE_FAILED" link="GsPlugin.html#GS-PLUGIN-ERROR-DELETE-FAILED:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_REFRESH_FLAGS_NONE" link="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-NONE:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_REFRESH_FLAGS_METADATA" link="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-METADATA:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_REFRESH_FLAGS_PAYLOAD" link="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-PAYLOAD:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_REFRESH_FLAGS_INTERACTIVE" link="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-INTERACTIVE:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_RULE_CONFLICTS" link="GsPlugin.html#GS-PLUGIN-RULE-CONFLICTS:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_RULE_RUN_AFTER" link="GsPlugin.html#GS-PLUGIN-RULE-RUN-AFTER:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_RULE_RUN_BEFORE" link="GsPlugin.html#GS-PLUGIN-RULE-RUN-BEFORE:CAPS"/>
+    <keyword type="constant" name="GS_PLUGIN_RULE_BETTER_THAN" link="GsPlugin.html#GS-PLUGIN-RULE-BETTER-THAN:CAPS"/>
+    <keyword type="constant" name="GS_UTILS_CACHE_FLAG_NONE" link="gnome-software-GsUtils.html#GS-UTILS-CACHE-FLAG-NONE:CAPS"/>
+    <keyword type="constant" name="GS_UTILS_CACHE_FLAG_WRITEABLE" link="gnome-software-GsUtils.html#GS-UTILS-CACHE-FLAG-WRITEABLE:CAPS"/>
+  </functions>
+</book>

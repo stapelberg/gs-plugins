@@ -1,0 +1,2053 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GsPlugin Helpers: GNOME Software Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Software Reference Manual">
+<link rel="up" href="api.html" title="GNOME Software Plugin API">
+<link rel="prev" href="GsOsRelease.html" title="GsOsRelease">
+<link rel="next" href="gnome-software-GsPlugin-Exports.html" title="GsPlugin Exports">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GsPlugin.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GsPlugin.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GsPlugin.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GsPlugin.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GsOsRelease.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gnome-software-GsPlugin-Exports.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GsPlugin"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GsPlugin.top_of_page"></a>GsPlugin Helpers</span></h2>
+<p>GsPlugin Helpers — Runtime-loaded modules providing functionality</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GsPlugin.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Unstable"><span class="acronym">Unstable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GsPlugin.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-error-quark" title="gs_plugin_error_quark ()">gs_plugin_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GsPlugin.html#GsPluginData" title="GsPluginData"><span class="returnvalue">GsPluginData</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-alloc-data" title="gs_plugin_alloc_data ()">gs_plugin_alloc_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GsPlugin.html#GsPluginData" title="GsPluginData"><span class="returnvalue">GsPluginData</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-get-data" title="gs_plugin_get_data ()">gs_plugin_get_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-get-name" title="gs_plugin_get_name ()">gs_plugin_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-get-enabled" title="gs_plugin_get_enabled ()">gs_plugin_get_enabled</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-set-enabled" title="gs_plugin_set_enabled ()">gs_plugin_set_enabled</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-has-flags" title="gs_plugin_has_flags ()">gs_plugin_has_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-add-flags" title="gs_plugin_add_flags ()">gs_plugin_add_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-remove-flags" title="gs_plugin_remove_flags ()">gs_plugin_remove_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-get-scale" title="gs_plugin_get_scale ()">gs_plugin_get_scale</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-get-locale" title="gs_plugin_get_locale ()">gs_plugin_get_locale</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-get-language" title="gs_plugin_get_language ()">gs_plugin_get_language</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">AsProfile</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-get-profile" title="gs_plugin_get_profile ()">gs_plugin_get_profile</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/libsoup-2.4SoupSession.html#SoupSession-struct"><span class="returnvalue">SoupSession</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-get-soup-session" title="gs_plugin_get_soup_session ()">gs_plugin_get_soup_session</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-add-auth" title="gs_plugin_add_auth ()">gs_plugin_add_auth</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="returnvalue">GsAuth</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-get-auth-by-id" title="gs_plugin_get_auth_by_id ()">gs_plugin_get_auth_by_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-add-rule" title="gs_plugin_add_rule ()">gs_plugin_add_rule</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-download-data" title="gs_plugin_download_data ()">gs_plugin_download_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-download-file" title="gs_plugin_download_file ()">gs_plugin_download_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-check-distro-id" title="gs_plugin_check_distro_id ()">gs_plugin_check_distro_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GsApp.html" title="GsApp"><span class="returnvalue">GsApp</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-cache-lookup" title="gs_plugin_cache_lookup ()">gs_plugin_cache_lookup</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-cache-add" title="gs_plugin_cache_add ()">gs_plugin_cache_add</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-cache-remove" title="gs_plugin_cache_remove ()">gs_plugin_cache_remove</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-cache-invalidate" title="gs_plugin_cache_invalidate ()">gs_plugin_cache_invalidate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-status-update" title="gs_plugin_status_update ()">gs_plugin_status_update</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-app-launch" title="gs_plugin_app_launch ()">gs_plugin_app_launch</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-updates-changed" title="gs_plugin_updates_changed ()">gs_plugin_updates_changed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-reload" title="gs_plugin_reload ()">gs_plugin_reload</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GsPlugin.html#gs-plugin-status-to-string" title="gs_plugin_status_to_string ()">gs_plugin_status_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GsPlugin.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#guint64"><span class="type">guint64</span></a></td>
+<td class="property_name"><a class="link" href="GsPlugin.html#GsPlugin--flags" title="The “flags” property">flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GsPlugin.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GsPlugin.html#GsPlugin-reload" title="The “reload” signal">reload</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobjectgobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GsPlugin.html#GsPlugin-status-changed" title="The “status-changed” signal">status-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobjectgobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GsPlugin.html#GsPlugin-updates-changed" title="The “updates-changed” signal">updates-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobjectgobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GsPlugin.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-TYPE-PLUGIN:CAPS" title="GS_TYPE_PLUGIN">GS_TYPE_PLUGIN</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GsPluginClass" title="struct GsPluginClass">GsPluginClass</a></td>
+</tr>
+<tr>
+<td class="typedef_keyword">typedef</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GsPluginData" title="GsPluginData">GsPluginData</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GsPluginStatus" title="enum GsPluginStatus">GsPluginStatus</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-FLAGS-NONE:CAPS" title="GS_PLUGIN_FLAGS_NONE">GS_PLUGIN_FLAGS_NONE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-FLAGS-RUNNING-SELF:CAPS" title="GS_PLUGIN_FLAGS_RUNNING_SELF">GS_PLUGIN_FLAGS_RUNNING_SELF</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-FLAGS-RUNNING-OTHER:CAPS" title="GS_PLUGIN_FLAGS_RUNNING_OTHER">GS_PLUGIN_FLAGS_RUNNING_OTHER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-FLAGS-EXCLUSIVE:CAPS" title="GS_PLUGIN_FLAGS_EXCLUSIVE">GS_PLUGIN_FLAGS_EXCLUSIVE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-FLAGS-RECENT:CAPS" title="GS_PLUGIN_FLAGS_RECENT">GS_PLUGIN_FLAGS_RECENT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-FLAGS-GLOBAL-CACHE:CAPS" title="GS_PLUGIN_FLAGS_GLOBAL_CACHE">GS_PLUGIN_FLAGS_GLOBAL_CACHE</a></td>
+</tr>
+<tr>
+<td class="typedef_keyword">typedef</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GsPluginFlags" title="GsPluginFlags">GsPluginFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GsPluginError" title="enum GsPluginError">GsPluginError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-DEFAULT:CAPS" title="GS_PLUGIN_REFINE_FLAGS_DEFAULT">GS_PLUGIN_REFINE_FLAGS_DEFAULT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-USE-HISTORY:CAPS" title="GS_PLUGIN_REFINE_FLAGS_USE_HISTORY">GS_PLUGIN_REFINE_FLAGS_USE_HISTORY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-LICENSE:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE">GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-URL:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_URL">GS_PLUGIN_REFINE_FLAGS_REQUIRE_URL</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-DESCRIPTION:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_DESCRIPTION">GS_PLUGIN_REFINE_FLAGS_REQUIRE_DESCRIPTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-SIZE:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_SIZE">GS_PLUGIN_REFINE_FLAGS_REQUIRE_SIZE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-RATING:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_RATING">GS_PLUGIN_REFINE_FLAGS_REQUIRE_RATING</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-VERSION:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_VERSION">GS_PLUGIN_REFINE_FLAGS_REQUIRE_VERSION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-HISTORY:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_HISTORY">GS_PLUGIN_REFINE_FLAGS_REQUIRE_HISTORY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-SETUP-ACTION:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_SETUP_ACTION">GS_PLUGIN_REFINE_FLAGS_REQUIRE_SETUP_ACTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-UPDATE-DETAILS:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPDATE_DETAILS">GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPDATE_DETAILS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-ORIGIN:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN">GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-RELATED:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_RELATED">GS_PLUGIN_REFINE_FLAGS_REQUIRE_RELATED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-MENU-PATH:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_MENU_PATH">GS_PLUGIN_REFINE_FLAGS_REQUIRE_MENU_PATH</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-ADDONS:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_ADDONS">GS_PLUGIN_REFINE_FLAGS_REQUIRE_ADDONS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-ALLOW-PACKAGES:CAPS" title="GS_PLUGIN_REFINE_FLAGS_ALLOW_PACKAGES">GS_PLUGIN_REFINE_FLAGS_ALLOW_PACKAGES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-UPDATE-SEVERITY:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPDATE_SEVERITY">GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPDATE_SEVERITY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-UPGRADE-REMOVED:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPGRADE_REMOVED">GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPGRADE_REMOVED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-PROVENANCE:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_PROVENANCE">GS_PLUGIN_REFINE_FLAGS_REQUIRE_PROVENANCE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-REVIEWS:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_REVIEWS">GS_PLUGIN_REFINE_FLAGS_REQUIRE_REVIEWS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-REVIEW-RATINGS:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_REVIEW_RATINGS">GS_PLUGIN_REFINE_FLAGS_REQUIRE_REVIEW_RATINGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-KEY-COLORS:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_KEY_COLORS">GS_PLUGIN_REFINE_FLAGS_REQUIRE_KEY_COLORS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-ICON:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_ICON">GS_PLUGIN_REFINE_FLAGS_REQUIRE_ICON</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-PERMISSIONS:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_PERMISSIONS">GS_PLUGIN_REFINE_FLAGS_REQUIRE_PERMISSIONS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-ORIGIN-HOSTNAME:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN_HOSTNAME">GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN_HOSTNAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-ORIGIN-UI:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN_UI">GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN_UI</a></td>
+</tr>
+<tr>
+<td class="typedef_keyword">typedef</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GsPluginRefineFlags" title="GsPluginRefineFlags">GsPluginRefineFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GsPluginRefreshFlags" title="enum GsPluginRefreshFlags">GsPluginRefreshFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GsPluginRule" title="enum GsPluginRule">GsPluginRule</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GS-PLUGIN-ERROR:CAPS" title="GS_PLUGIN_ERROR">GS_PLUGIN_ERROR</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GsPlugin.html#GsPlugin-struct" title="GsPlugin">GsPlugin</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GsPlugin.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobjectgobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GsPlugin
+</pre>
+</div>
+<div class="refsect1">
+<a name="GsPlugin.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;gnome-software.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GsPlugin.description"></a><h2>Description</h2>
+<p>Plugins are modules that are loaded at runtime to provide information
+about requests and to service user actions like installing, removing
+and updating.
+This allows different distributions to pick and choose how the
+application installer gathers data.</p>
+<p>Plugins also have a priority system where the largest number gets
+run first. That means if one plugin requires some property or
+metadata set by another plugin then it **must** depend on the other
+plugin to be run in the correct order.</p>
+<p>As a general rule, try to make plugins as small and self-contained
+as possible and remember to cache as much data as possible for speed.
+Memory is cheap, time less so.</p>
+</div>
+<div class="refsect1">
+<a name="GsPlugin.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gs-plugin-error-quark"></a><h3>gs_plugin_error_quark ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>
+gs_plugin_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-alloc-data"></a><h3>gs_plugin_alloc_data ()</h3>
+<pre class="programlisting"><a class="link" href="GsPlugin.html#GsPluginData" title="GsPluginData"><span class="returnvalue">GsPluginData</span></a> *
+gs_plugin_alloc_data (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gsize"><span class="type">gsize</span></a> sz</code></em>);</pre>
+<p>Allocates a private data area for the plugin which can be retrieved
+using <a class="link" href="GsPlugin.html#gs-plugin-get-data" title="gs_plugin_get_data ()"><code class="function">gs_plugin_get_data()</code></a>.
+This is normally called in <a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-initialize" title="gs_plugin_initialize ()"><code class="function">gs_plugin_initialize()</code></a> and the data should
+not be manually freed.</p>
+<div class="refsect3">
+<a name="gs-plugin-alloc-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sz</p></td>
+<td class="parameter_description"><p>the size of data to allocate, e.g. <code class="literal">sizeof(FooPluginPrivate)</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-alloc-data.returns"></a><h4>Returns</h4>
+<p> the <a class="link" href="GsPlugin.html#GsPluginData" title="GsPluginData"><span class="type">GsPluginData</span></a>, cleared to NUL butes</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-get-data"></a><h3>gs_plugin_get_data ()</h3>
+<pre class="programlisting"><a class="link" href="GsPlugin.html#GsPluginData" title="GsPluginData"><span class="returnvalue">GsPluginData</span></a> *
+gs_plugin_get_data (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Gets the private data for the plugin if <a class="link" href="GsPlugin.html#gs-plugin-alloc-data" title="gs_plugin_alloc_data ()"><code class="function">gs_plugin_alloc_data()</code></a> has
+been called.</p>
+<div class="refsect3">
+<a name="gs-plugin-get-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-get-data.returns"></a><h4>Returns</h4>
+<p> the <a class="link" href="GsPlugin.html#GsPluginData" title="GsPluginData"><span class="type">GsPluginData</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-get-name"></a><h3>gs_plugin_get_name ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_plugin_get_name (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Gets the plugin name.</p>
+<div class="refsect3">
+<a name="gs-plugin-get-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-get-name.returns"></a><h4>Returns</h4>
+<p> a string, e.g. "fwupd"</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-get-enabled"></a><h3>gs_plugin_get_enabled ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_get_enabled (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Gets if the plugin is enabled.</p>
+<div class="refsect3">
+<a name="gs-plugin-get-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-get-enabled.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if enabled</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-set-enabled"></a><h3>gs_plugin_set_enabled ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_set_enabled (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> enabled</code></em>);</pre>
+<p>Enables or disables a plugin.
+This is normally only called from <a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-initialize" title="gs_plugin_initialize ()"><code class="function">gs_plugin_initialize()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-set-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>enabled</p></td>
+<td class="parameter_description"><p>the enabled state</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-has-flags"></a><h3>gs_plugin_has_flags ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_has_flags (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                     <em class="parameter"><code><a class="link" href="GsPlugin.html#GsPluginFlags" title="GsPluginFlags"><span class="type">GsPluginFlags</span></a> flags</code></em>);</pre>
+<p>Finds out if a plugin has a specific flag set.</p>
+<div class="refsect3">
+<a name="gs-plugin-has-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html#GsPluginFlags" title="GsPluginFlags"><span class="type">GsPluginFlags</span></a>, e.g. <a class="link" href="GsPlugin.html#GS-PLUGIN-FLAGS-RUNNING-SELF:CAPS" title="GS_PLUGIN_FLAGS_RUNNING_SELF"><code class="literal">GS_PLUGIN_FLAGS_RUNNING_SELF</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-has-flags.returns"></a><h4>Returns</h4>
+<p> TRUE if the flag is set</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-flags"></a><h3>gs_plugin_add_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_add_flags (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                     <em class="parameter"><code><a class="link" href="GsPlugin.html#GsPluginFlags" title="GsPluginFlags"><span class="type">GsPluginFlags</span></a> flags</code></em>);</pre>
+<p>Adds specific flags to the plugin.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html#GsPluginFlags" title="GsPluginFlags"><span class="type">GsPluginFlags</span></a>, e.g. <a class="link" href="GsPlugin.html#GS-PLUGIN-FLAGS-RUNNING-SELF:CAPS" title="GS_PLUGIN_FLAGS_RUNNING_SELF"><code class="literal">GS_PLUGIN_FLAGS_RUNNING_SELF</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-remove-flags"></a><h3>gs_plugin_remove_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_remove_flags (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                        <em class="parameter"><code><a class="link" href="GsPlugin.html#GsPluginFlags" title="GsPluginFlags"><span class="type">GsPluginFlags</span></a> flags</code></em>);</pre>
+<p>Removes specific flags from the plugin.</p>
+<div class="refsect3">
+<a name="gs-plugin-remove-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html#GsPluginFlags" title="GsPluginFlags"><span class="type">GsPluginFlags</span></a>, e.g. <a class="link" href="GsPlugin.html#GS-PLUGIN-FLAGS-RUNNING-SELF:CAPS" title="GS_PLUGIN_FLAGS_RUNNING_SELF"><code class="literal">GS_PLUGIN_FLAGS_RUNNING_SELF</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-get-scale"></a><h3>gs_plugin_get_scale ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+gs_plugin_get_scale (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Gets the window scale factor.</p>
+<div class="refsect3">
+<a name="gs-plugin-get-scale.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-get-scale.returns"></a><h4>Returns</h4>
+<p> the factor, usually 1 for standard screens or 2 for HiDPI</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-get-locale"></a><h3>gs_plugin_get_locale ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_plugin_get_locale (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Gets the user locale.</p>
+<div class="refsect3">
+<a name="gs-plugin-get-locale.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-get-locale.returns"></a><h4>Returns</h4>
+<p> the locale string, e.g. "en_GB"</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-get-language"></a><h3>gs_plugin_get_language ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_plugin_get_language (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Gets the user language from the locale.</p>
+<div class="refsect3">
+<a name="gs-plugin-get-language.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-get-language.returns"></a><h4>Returns</h4>
+<p> the language string, e.g. "fr"</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-get-profile"></a><h3>gs_plugin_get_profile ()</h3>
+<pre class="programlisting"><span class="returnvalue">AsProfile</span> *
+gs_plugin_get_profile (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Gets the profile object to be used for the plugin.
+This can be used to make plugin actions appear in the global profile
+output.</p>
+<div class="refsect3">
+<a name="gs-plugin-get-profile.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-get-profile.returns"></a><h4>Returns</h4>
+<p> the <span class="type">AsProfile</span></p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-get-soup-session"></a><h3>gs_plugin_get_soup_session ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/libsoup-2.4SoupSession.html#SoupSession-struct"><span class="returnvalue">SoupSession</span></a> *
+gs_plugin_get_soup_session (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Gets the soup session that plugins can use when downloading.</p>
+<div class="refsect3">
+<a name="gs-plugin-get-soup-session.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-get-soup-session.returns"></a><h4>Returns</h4>
+<p> the <a href="/usr/share/gtk-doc/html/libsoup-2.4SoupSession.html#SoupSession-struct"><span class="type">SoupSession</span></a></p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-auth"></a><h3>gs_plugin_add_auth ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_add_auth (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                    <em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>);</pre>
+<p>Adds an authentication object that can be used for all the plugins.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-auth.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-get-auth-by-id"></a><h3>gs_plugin_get_auth_by_id ()</h3>
+<pre class="programlisting"><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="returnvalue">GsAuth</span></a> *
+gs_plugin_get_auth_by_id (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider_id</code></em>);</pre>
+<p>Gets a specific authentication object.</p>
+<div class="refsect3">
+<a name="gs-plugin-get-auth-by-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>provider_id</p></td>
+<td class="parameter_description"><p>an ID, e.g. "dummy-sso"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-get-auth-by-id.returns"></a><h4>Returns</h4>
+<p> the <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-rule"></a><h3>gs_plugin_add_rule ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_add_rule (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                    <em class="parameter"><code><a class="link" href="GsPlugin.html#GsPluginRule" title="enum GsPluginRule"><span class="type">GsPluginRule</span></a> rule</code></em>,
+                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>If the plugin name is found, the rule will be used to sort the plugin list,
+for example the plugin specified by <em class="parameter"><code>name</code></em>
+ will be ordered after this plugin
+when <a class="link" href="GsPlugin.html#GS-PLUGIN-RULE-RUN-AFTER:CAPS"><code class="literal">GS_PLUGIN_RULE_RUN_AFTER</code></a> is used.</p>
+<p>NOTE: The depsolver is iterative and may not solve overly-complicated rules;
+If depsolving fails then gnome-software will not start.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-rule.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>rule</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html#GsPluginRule" title="enum GsPluginRule"><span class="type">GsPluginRule</span></a>, e.g. <a class="link" href="GsPlugin.html#GS-PLUGIN-RULE-CONFLICTS:CAPS"><code class="literal">GS_PLUGIN_RULE_CONFLICTS</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>a plugin name, e.g. "appstream"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-download-data"></a><h3>gs_plugin_download_data ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+gs_plugin_download_data (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                         <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Downloads data.</p>
+<div class="refsect3">
+<a name="gs-plugin-download-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>a remote URI</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-download-data.returns"></a><h4>Returns</h4>
+<p> the downloaded data, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-download-file"></a><h3>gs_plugin_download_file ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_download_file (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                         <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Downloads data and saves it to a file.</p>
+<div class="refsect3">
+<a name="gs-plugin-download-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>a remote URI</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>a local filename</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-download-file.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-check-distro-id"></a><h3>gs_plugin_check_distro_id ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_check_distro_id (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                           <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *distro_id</code></em>);</pre>
+<p>Checks if the distro is compatible.</p>
+<div class="refsect3">
+<a name="gs-plugin-check-distro-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>distro_id</p></td>
+<td class="parameter_description"><p>a distro ID, e.g. "fedora"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-check-distro-id.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if compatible</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-cache-lookup"></a><h3>gs_plugin_cache_lookup ()</h3>
+<pre class="programlisting"><a class="link" href="GsApp.html" title="GsApp"><span class="returnvalue">GsApp</span></a> *
+gs_plugin_cache_lookup (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                        <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
+<p>Looks up an application object from the per-plugin cache</p>
+<div class="refsect3">
+<a name="gs-plugin-cache-lookup.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-cache-lookup.returns"></a><h4>Returns</h4>
+<p> the <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-cache-add"></a><h3>gs_plugin_cache_add ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_cache_add (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                     <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>);</pre>
+<p>Adds an application to the per-plugin cache. This is optional,
+and the plugin can use the cache however it likes.</p>
+<div class="refsect3">
+<a name="gs-plugin-cache-add.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>a string, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the unique ID should be used</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-cache-remove"></a><h3>gs_plugin_cache_remove ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_cache_remove (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                        <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
+<p>Removes an application from the per-plugin cache.</p>
+<div class="refsect3">
+<a name="gs-plugin-cache-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>a key which matches</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-cache-invalidate"></a><h3>gs_plugin_cache_invalidate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_cache_invalidate (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Invalidate the per-plugin cache by marking all entries as invalid.
+This is optional, and the plugin can evict the cache whenever it
+likes. Using this function may mean the front-end and the plugin
+may be operating on a different GsApp with the same cache ID.</p>
+<p>Most plugins do not need to call this funtion; if a suitable cache
+key is being used the old cache item can remain.</p>
+<div class="refsect3">
+<a name="gs-plugin-cache-invalidate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-status-update"></a><h3>gs_plugin_status_update ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_status_update (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                         <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                         <em class="parameter"><code><a class="link" href="GsPlugin.html#GsPluginStatus" title="enum GsPluginStatus"><span class="type">GsPluginStatus</span></a> status</code></em>);</pre>
+<p>Update the state of the plugin so any UI can be updated.</p>
+<div class="refsect3">
+<a name="gs-plugin-status-update.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>status</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html#GsPluginStatus" title="enum GsPluginStatus"><span class="type">GsPluginStatus</span></a>, e.g. <a class="link" href="GsPlugin.html#GS-PLUGIN-STATUS-DOWNLOADING:CAPS"><code class="literal">GS_PLUGIN_STATUS_DOWNLOADING</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-app-launch"></a><h3>gs_plugin_app_launch ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_app_launch (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                      <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Launches the application using GAppInfo.</p>
+<div class="refsect3">
+<a name="gs-plugin-app-launch.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-app-launch.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-updates-changed"></a><h3>gs_plugin_updates_changed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_updates_changed (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Emit a signal that tells the plugin loader that the list of updates
+may have changed.</p>
+<div class="refsect3">
+<a name="gs-plugin-updates-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-reload"></a><h3>gs_plugin_reload ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_reload (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Plugins that call this function should expect that all panels will
+reload after a small delay, causing mush flashing, wailing and
+gnashing of teeth.</p>
+<p>Plugins should not call this unless absolutely required.</p>
+<div class="refsect3">
+<a name="gs-plugin-reload.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-status-to-string"></a><h3>gs_plugin_status_to_string ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_plugin_status_to_string (<em class="parameter"><code><a class="link" href="GsPlugin.html#GsPluginStatus" title="enum GsPluginStatus"><span class="type">GsPluginStatus</span></a> status</code></em>);</pre>
+<p>Converts the <a class="link" href="GsPlugin.html#GsPluginStatus" title="enum GsPluginStatus"><span class="type">GsPluginStatus</span></a> enum to a string.</p>
+<div class="refsect3">
+<a name="gs-plugin-status-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>status</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html#GsPluginStatus" title="enum GsPluginStatus"><span class="type">GsPluginStatus</span></a>, e.g. <a class="link" href="GsPlugin.html#GS-PLUGIN-STATUS-DOWNLOADING:CAPS"><code class="literal">GS_PLUGIN_STATUS_DOWNLOADING</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-status-to-string.returns"></a><h4>Returns</h4>
+<p> the string representation, or "unknown"</p>
+</div>
+<p class="since">Since: 3.22</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GsPlugin.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GS-TYPE-PLUGIN:CAPS"></a><h3>GS_TYPE_PLUGIN</h3>
+<pre class="programlisting">#define GS_TYPE_PLUGIN (gs_plugin_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsPluginClass"></a><h3>struct GsPluginClass</h3>
+<pre class="programlisting">struct GsPluginClass {
+	GObjectClass		 parent_class;
+	void			(*updates_changed) (GsPlugin *plugin);
+	void			(*status_changed) (GsPlugin *plugin,
+							 GsApp		*app,
+							 guint		 status);
+	void			(*reload)		(GsPlugin *plugin);
+	gpointer		 padding[28];
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsPluginData"></a><h3>GsPluginData</h3>
+<pre class="programlisting">typedef struct GsPluginData GsPluginData;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsPluginStatus"></a><h3>enum GsPluginStatus</h3>
+<p>The ststus of the plugin.</p>
+<div class="refsect3">
+<a name="GsPluginStatus.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-STATUS-UNKNOWN:CAPS"></a>GS_PLUGIN_STATUS_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>Unknown status</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-STATUS-WAITING:CAPS"></a>GS_PLUGIN_STATUS_WAITING</p></td>
+<td class="enum_member_description">
+<p>Waiting</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-STATUS-FINISHED:CAPS"></a>GS_PLUGIN_STATUS_FINISHED</p></td>
+<td class="enum_member_description">
+<p>Finished</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-STATUS-SETUP:CAPS"></a>GS_PLUGIN_STATUS_SETUP</p></td>
+<td class="enum_member_description">
+<p>Setup in progress</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-STATUS-DOWNLOADING:CAPS"></a>GS_PLUGIN_STATUS_DOWNLOADING</p></td>
+<td class="enum_member_description">
+<p>Downloading in progress</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-STATUS-QUERYING:CAPS"></a>GS_PLUGIN_STATUS_QUERYING</p></td>
+<td class="enum_member_description">
+<p>Querying in progress</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-STATUS-INSTALLING:CAPS"></a>GS_PLUGIN_STATUS_INSTALLING</p></td>
+<td class="enum_member_description">
+<p>Installing in progress</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-STATUS-REMOVING:CAPS"></a>GS_PLUGIN_STATUS_REMOVING</p></td>
+<td class="enum_member_description">
+<p>Removing in progress</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-FLAGS-NONE:CAPS"></a><h3>GS_PLUGIN_FLAGS_NONE</h3>
+<pre class="programlisting">#define GS_PLUGIN_FLAGS_NONE		(0u)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-FLAGS-RUNNING-SELF:CAPS"></a><h3>GS_PLUGIN_FLAGS_RUNNING_SELF</h3>
+<pre class="programlisting">#define GS_PLUGIN_FLAGS_RUNNING_SELF (1u &lt;&lt; 0)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-FLAGS-RUNNING-OTHER:CAPS"></a><h3>GS_PLUGIN_FLAGS_RUNNING_OTHER</h3>
+<pre class="programlisting">#define GS_PLUGIN_FLAGS_RUNNING_OTHER (1u &lt;&lt; 1)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-FLAGS-EXCLUSIVE:CAPS"></a><h3>GS_PLUGIN_FLAGS_EXCLUSIVE</h3>
+<pre class="programlisting">#define GS_PLUGIN_FLAGS_EXCLUSIVE (1u &lt;&lt; 2)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-FLAGS-RECENT:CAPS"></a><h3>GS_PLUGIN_FLAGS_RECENT</h3>
+<pre class="programlisting">#define GS_PLUGIN_FLAGS_RECENT		(1u &lt;&lt; 3)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-FLAGS-GLOBAL-CACHE:CAPS"></a><h3>GS_PLUGIN_FLAGS_GLOBAL_CACHE</h3>
+<pre class="programlisting">#define GS_PLUGIN_FLAGS_GLOBAL_CACHE (1u &lt;&lt; 4)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsPluginFlags"></a><h3>GsPluginFlags</h3>
+<pre class="programlisting">typedef guint64 GsPluginFlags;
+</pre>
+<p>The flags for the plugin at this point in time.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsPluginError"></a><h3>enum GsPluginError</h3>
+<p>The failure error types.</p>
+<div class="refsect3">
+<a name="GsPluginError.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-FAILED:CAPS"></a>GS_PLUGIN_ERROR_FAILED</p></td>
+<td class="enum_member_description">
+<p>Generic failure</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-NOT-SUPPORTED:CAPS"></a>GS_PLUGIN_ERROR_NOT_SUPPORTED</p></td>
+<td class="enum_member_description">
+<p>Action not supported</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-CANCELLED:CAPS"></a>GS_PLUGIN_ERROR_CANCELLED</p></td>
+<td class="enum_member_description">
+<p>Action was cancelled</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-NO-NETWORK:CAPS"></a>GS_PLUGIN_ERROR_NO_NETWORK</p></td>
+<td class="enum_member_description">
+<p>No network connection available</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-NO-SECURITY:CAPS"></a>GS_PLUGIN_ERROR_NO_SECURITY</p></td>
+<td class="enum_member_description">
+<p>Security policy forbid action</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-NO-SPACE:CAPS"></a>GS_PLUGIN_ERROR_NO_SPACE</p></td>
+<td class="enum_member_description">
+<p>No disk space to allow action</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-AUTH-REQUIRED:CAPS"></a>GS_PLUGIN_ERROR_AUTH_REQUIRED</p></td>
+<td class="enum_member_description">
+<p>Authentication was required</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-AUTH-INVALID:CAPS"></a>GS_PLUGIN_ERROR_AUTH_INVALID</p></td>
+<td class="enum_member_description">
+<p>Provided authentication was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-PIN-REQUIRED:CAPS"></a>GS_PLUGIN_ERROR_PIN_REQUIRED</p></td>
+<td class="enum_member_description">
+<p>PIN required for authentication</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-ACCOUNT-SUSPENDED:CAPS"></a>GS_PLUGIN_ERROR_ACCOUNT_SUSPENDED</p></td>
+<td class="enum_member_description">
+<p>User account has been suspended</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-ACCOUNT-DEACTIVATED:CAPS"></a>GS_PLUGIN_ERROR_ACCOUNT_DEACTIVATED</p></td>
+<td class="enum_member_description">
+<p>User account has been deactivated</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-PLUGIN-DEPSOLVE-FAILED:CAPS"></a>GS_PLUGIN_ERROR_PLUGIN_DEPSOLVE_FAILED</p></td>
+<td class="enum_member_description">
+<p>The plugins installed are incompatible</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-DOWNLOAD-FAILED:CAPS"></a>GS_PLUGIN_ERROR_DOWNLOAD_FAILED</p></td>
+<td class="enum_member_description">
+<p>The download action failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-WRITE-FAILED:CAPS"></a>GS_PLUGIN_ERROR_WRITE_FAILED</p></td>
+<td class="enum_member_description">
+<p>The save-to-disk failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-INVALID-FORMAT:CAPS"></a>GS_PLUGIN_ERROR_INVALID_FORMAT</p></td>
+<td class="enum_member_description">
+<p>The data format is invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-ERROR-DELETE-FAILED:CAPS"></a>GS_PLUGIN_ERROR_DELETE_FAILED</p></td>
+<td class="enum_member_description">
+<p>The delete action failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-DEFAULT:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_DEFAULT</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_DEFAULT			(0u)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-USE-HISTORY:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_USE_HISTORY</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_USE_HISTORY		(1u &lt;&lt; 0)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-LICENSE:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE		(1u &lt;&lt; 1)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-URL:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_URL</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_URL		(1u &lt;&lt; 2)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-DESCRIPTION:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_DESCRIPTION</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_DESCRIPTION (1u &lt;&lt; 3)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-SIZE:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_SIZE</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_SIZE		(1u &lt;&lt; 4)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-RATING:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_RATING</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_RATING		(1u &lt;&lt; 5)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-VERSION:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_VERSION</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_VERSION		(1u &lt;&lt; 6)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-HISTORY:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_HISTORY</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_HISTORY		(1u &lt;&lt; 7)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-SETUP-ACTION:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_SETUP_ACTION</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_SETUP_ACTION (1u &lt;&lt; 8)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-UPDATE-DETAILS:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPDATE_DETAILS</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPDATE_DETAILS (1u &lt;&lt; 9)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-ORIGIN:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN		(1u &lt;&lt; 10)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-RELATED:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_RELATED</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_RELATED		(1u &lt;&lt; 11)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-MENU-PATH:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_MENU_PATH</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_MENU_PATH (1u &lt;&lt; 12)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-ADDONS:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_ADDONS</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_ADDONS		(1u &lt;&lt; 13)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-ALLOW-PACKAGES:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_ALLOW_PACKAGES</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_ALLOW_PACKAGES		(1u &lt;&lt; 14)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-UPDATE-SEVERITY:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPDATE_SEVERITY</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPDATE_SEVERITY (1u &lt;&lt; 15)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-UPGRADE-REMOVED:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPGRADE_REMOVED</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_UPGRADE_REMOVED (1u &lt;&lt; 16)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-PROVENANCE:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_PROVENANCE</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_PROVENANCE (1u &lt;&lt; 17)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-REVIEWS:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_REVIEWS</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_REVIEWS		(1u &lt;&lt; 18)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-REVIEW-RATINGS:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_REVIEW_RATINGS</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_REVIEW_RATINGS (1u &lt;&lt; 19)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-KEY-COLORS:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_KEY_COLORS</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_KEY_COLORS (1u &lt;&lt; 20)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-ICON:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_ICON</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_ICON		(1u &lt;&lt; 21)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-PERMISSIONS:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_PERMISSIONS</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_PERMISSIONS (1u &lt;&lt; 22)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-ORIGIN-HOSTNAME:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN_HOSTNAME</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN_HOSTNAME (1u &lt;&lt; 23)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-REFINE-FLAGS-REQUIRE-ORIGIN-UI:CAPS"></a><h3>GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN_UI</h3>
+<pre class="programlisting">#define GS_PLUGIN_REFINE_FLAGS_REQUIRE_ORIGIN_UI (1u &lt;&lt; 24)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsPluginRefineFlags"></a><h3>GsPluginRefineFlags</h3>
+<pre class="programlisting">typedef guint64 GsPluginRefineFlags;
+</pre>
+<p>The refine flags.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsPluginRefreshFlags"></a><h3>enum GsPluginRefreshFlags</h3>
+<p>The flags used for refresh. Regeneration and downloading is only
+done if the cache is older than the <code class="literal">cache_age</code>.</p>
+<p>The <a class="link" href="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-METADATA:CAPS"><code class="literal">GS_PLUGIN_REFRESH_FLAGS_METADATA</code></a> can be used to make sure
+there's enough metadata to start the application.
+The <a class="link" href="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-PAYLOAD:CAPS"><code class="literal">GS_PLUGIN_REFRESH_FLAGS_PAYLOAD</code></a> flag should only be used when
+the session is idle and bandwidth is unmetered as the amount of data
+and IO may be large.</p>
+<div class="refsect3">
+<a name="GsPluginRefreshFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-REFRESH-FLAGS-NONE:CAPS"></a>GS_PLUGIN_REFRESH_FLAGS_NONE</p></td>
+<td class="enum_member_description">
+<p>Generate new metadata if possible</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-REFRESH-FLAGS-METADATA:CAPS"></a>GS_PLUGIN_REFRESH_FLAGS_METADATA</p></td>
+<td class="enum_member_description">
+<p>Download new metadata</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-REFRESH-FLAGS-PAYLOAD:CAPS"></a>GS_PLUGIN_REFRESH_FLAGS_PAYLOAD</p></td>
+<td class="enum_member_description">
+<p>Download any pending payload</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-REFRESH-FLAGS-INTERACTIVE:CAPS"></a>GS_PLUGIN_REFRESH_FLAGS_INTERACTIVE</p></td>
+<td class="enum_member_description">
+<p>Running by user request</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsPluginRule"></a><h3>enum GsPluginRule</h3>
+<p>The rules used for ordering plugins.
+Plugins are expected to add rules in <a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-initialize" title="gs_plugin_initialize ()"><code class="function">gs_plugin_initialize()</code></a>.</p>
+<div class="refsect3">
+<a name="GsPluginRule.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-RULE-CONFLICTS:CAPS"></a>GS_PLUGIN_RULE_CONFLICTS</p></td>
+<td class="enum_member_description">
+<p>The plugin conflicts with another</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-RULE-RUN-AFTER:CAPS"></a>GS_PLUGIN_RULE_RUN_AFTER</p></td>
+<td class="enum_member_description">
+<p>Order the plugin after another</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-RULE-RUN-BEFORE:CAPS"></a>GS_PLUGIN_RULE_RUN_BEFORE</p></td>
+<td class="enum_member_description">
+<p>Order the plugin before another</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-PLUGIN-RULE-BETTER-THAN:CAPS"></a>GS_PLUGIN_RULE_BETTER_THAN</p></td>
+<td class="enum_member_description">
+<p>Results are better than another</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GS-PLUGIN-ERROR:CAPS"></a><h3>GS_PLUGIN_ERROR</h3>
+<pre class="programlisting">#define GS_PLUGIN_ERROR					gs_plugin_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsPlugin-struct"></a><h3>GsPlugin</h3>
+<pre class="programlisting">typedef struct _GsPlugin GsPlugin;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GsPlugin.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GsPlugin--flags"></a><h3>The <code class="literal">“flags”</code> property</h3>
+<pre class="programlisting">  “flags”                    <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#guint64"><span class="type">guint64</span></a></pre>
+<p>Flags: Read / Write</p>
+<p>Default value: 0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GsPlugin.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GsPlugin-reload"></a><h3>The <code class="literal">“reload”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *gsplugin,
+               <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>  user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobjectgobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsPlugin-status-changed"></a><h3>The <code class="literal">“status-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *gsplugin,
+               <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a>    *arg1,
+               <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#guint"><span class="type">guint</span></a>     arg2,
+               <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>  user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobjectgobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsPlugin-updates-changed"></a><h3>The <code class="literal">“updates-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *gsplugin,
+               <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>  user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobjectgobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.25</div>
+</body>
+</html>

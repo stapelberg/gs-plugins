@@ -1,0 +1,74 @@
+#!/usr/bin/make -f
+
+-include /usr/share/gnome-pkg-tools/1/rules/gnome-get-source.mk
+
+GS_CONFIGURE_FLAGS = --libdir=/usr/lib \
+		--disable-ostree \
+		--enable-odrs \
+		--enable-packagekit \
+		--enable-gnome-desktop
+
+ifeq ($(DEB_HOST_ARCH_OS), linux)
+	# Enable Flatpak and Limba support on Linux
+	GS_CONFIGURE_FLAGS += --enable-limba --enable-flatpak
+
+	# Enable fwupd support on supported architectures
+	ifneq (,$(findstring $(DEB_HOST_ARCH), amd64 arm64 armhf i386))
+		GS_CONFIGURE_FLAGS += --enable-firmware
+	endif
+endif
+
+DISTRO_ID = debian
+FREE_URL = https:\/\/www.debian.org\/social_contract\#guidelines
+ifeq (yes,$(shell dpkg-vendor --derives-from Ubuntu && echo yes))
+	DISTRO_ID = ubuntu
+	FREE_URL = https:\/\/www.ubuntu.com\/about\/about-ubuntu\/licensing
+	GS_CONFIGURE_FLAGS += '--enable-ubuntu-reviews'
+else ifeq (yes,$(shell dpkg-vendor --derives-from Tanglu && echo yes))
+	DISTRO_ID = tanglu
+else ifeq (yes,$(shell dpkg-vendor --derives-from PureOS && echo yes))
+	DISTRO_ID = pureos
+endif
+
+# Install target dir
+INSTALLDIR = $(CURDIR)/debian/tmp
+
+%:
+	dh $@ --with autoreconf,gnome
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(GS_CONFIGURE_FLAGS)
+
+override_dh_auto_install:
+	dh_auto_install --destdir=$(INSTALLDIR)
+ifneq (yes,$(shell dpkg-vendor --derives-from Ubuntu && echo yes))
+	rm -f $(INSTALLDIR)/usr/lib/gs-plugins-*/libgs_plugin_ubuntu*
+endif
+
+override_dh_installgsettings:
+	sed 's/@DISTRO@/$(DISTRO_ID)/g' debian/gnome-software.gsettings-override.in > debian/gnome-software.gsettings-override
+	sed -i 's/@URL@/$(FREE_URL)/g' debian/gnome-software.gsettings-override
+	dh_installgsettings
+
+override_dh_install:
+	# Remove unused files
+	rm -f debian/tmp/usr/lib/gs-plugins-*/*.a
+	rm -f debian/tmp/usr/lib/gs-plugins-*/*.la
+	rm -f debian/tmp/usr/lib/gs-plugins-*/libgs_plugin_fedora*
+	dh_install --list-missing
+
+	# These files are split out to separate packages
+	rm -f debian/gnome-software/usr/lib/gs-plugins-*/libgs_plugin_flatpak*
+	rm -f debian/gnome-software/usr/lib/gs-plugins-*/libgs_plugin_limba*
+	rm -f debian/gnome-software/usr/lib/gs-plugins-*/libgs_plugin_ostree*
+	rm -f debian/gnome-software/usr/lib/gs-plugins-*/libgs_plugin_snap*
+
+override_dh_makeshlibs:
+	dh_makeshlibs -Xlibgs_plugin
+
+override_dh_auto_test:
+	# DISABLED
+
+override_dh_clean:
+	rm -f debian/gnome-software.gsettings-override
+	dh_clean

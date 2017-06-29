@@ -1,0 +1,2552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GsPlugin Exports: GNOME Software Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Software Reference Manual">
+<link rel="up" href="api.html" title="GNOME Software Plugin API">
+<link rel="prev" href="GsPlugin.html" title="GsPlugin Helpers">
+<link rel="next" href="gnome-software-GsUtils.html" title="GsUtils">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#gnome-software-GsPlugin-Exports.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GsPlugin.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gnome-software-GsUtils.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gnome-software-GsPlugin-Exports"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gnome-software-GsPlugin-Exports.top_of_page"></a>GsPlugin Exports</span></h2>
+<p>GsPlugin Exports — Vfuncs that plugins can implement</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="gnome-software-GsPlugin-Exports.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Unstable"><span class="acronym">Unstable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="gnome-software-GsPlugin-Exports.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-initialize" title="gs_plugin_initialize ()">gs_plugin_initialize</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-destroy" title="gs_plugin_destroy ()">gs_plugin_destroy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-adopt-app" title="gs_plugin_adopt_app ()">gs_plugin_adopt_app</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-search" title="gs_plugin_add_search ()">gs_plugin_add_search</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-search-files" title="gs_plugin_add_search_files ()">gs_plugin_add_search_files</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-search-what-provides" title="gs_plugin_add_search_what_provides ()">gs_plugin_add_search_what_provides</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-setup" title="gs_plugin_setup ()">gs_plugin_setup</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-installed" title="gs_plugin_add_installed ()">gs_plugin_add_installed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-updates" title="gs_plugin_add_updates ()">gs_plugin_add_updates</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-distro-upgrades" title="gs_plugin_add_distro_upgrades ()">gs_plugin_add_distro_upgrades</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-sources" title="gs_plugin_add_sources ()">gs_plugin_add_sources</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-updates-historical" title="gs_plugin_add_updates_historical ()">gs_plugin_add_updates_historical</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-categories" title="gs_plugin_add_categories ()">gs_plugin_add_categories</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-category-apps" title="gs_plugin_add_category_apps ()">gs_plugin_add_category_apps</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-popular" title="gs_plugin_add_popular ()">gs_plugin_add_popular</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-featured" title="gs_plugin_add_featured ()">gs_plugin_add_featured</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-unvoted-reviews" title="gs_plugin_add_unvoted_reviews ()">gs_plugin_add_unvoted_reviews</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-refine" title="gs_plugin_refine ()">gs_plugin_refine</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-refine-app" title="gs_plugin_refine_app ()">gs_plugin_refine_app</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-refine-wildcard" title="gs_plugin_refine_wildcard ()">gs_plugin_refine_wildcard</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-launch" title="gs_plugin_launch ()">gs_plugin_launch</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-shortcut" title="gs_plugin_add_shortcut ()">gs_plugin_add_shortcut</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-remove-shortcut" title="gs_plugin_remove_shortcut ()">gs_plugin_remove_shortcut</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-update-cancel" title="gs_plugin_update_cancel ()">gs_plugin_update_cancel</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-app-install" title="gs_plugin_app_install ()">gs_plugin_app_install</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-app-remove" title="gs_plugin_app_remove ()">gs_plugin_app_remove</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-app-set-rating" title="gs_plugin_app_set_rating ()">gs_plugin_app_set_rating</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-update-app" title="gs_plugin_update_app ()">gs_plugin_update_app</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-app-upgrade-download" title="gs_plugin_app_upgrade_download ()">gs_plugin_app_upgrade_download</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-app-upgrade-trigger" title="gs_plugin_app_upgrade_trigger ()">gs_plugin_app_upgrade_trigger</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-review-submit" title="gs_plugin_review_submit ()">gs_plugin_review_submit</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-review-upvote" title="gs_plugin_review_upvote ()">gs_plugin_review_upvote</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-review-downvote" title="gs_plugin_review_downvote ()">gs_plugin_review_downvote</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-review-report" title="gs_plugin_review_report ()">gs_plugin_review_report</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-review-remove" title="gs_plugin_review_remove ()">gs_plugin_review_remove</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-review-dismiss" title="gs_plugin_review_dismiss ()">gs_plugin_review_dismiss</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-refresh" title="gs_plugin_refresh ()">gs_plugin_refresh</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-file-to-app" title="gs_plugin_file_to_app ()">gs_plugin_file_to_app</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-update" title="gs_plugin_update ()">gs_plugin_update</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-auth-login" title="gs_plugin_auth_login ()">gs_plugin_auth_login</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-auth-logout" title="gs_plugin_auth_logout ()">gs_plugin_auth_logout</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-auth-lost-password" title="gs_plugin_auth_lost_password ()">gs_plugin_auth_lost_password</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-auth-register" title="gs_plugin_auth_register ()">gs_plugin_auth_register</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gnome-software-GsPlugin-Exports.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;gnome-software.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="gnome-software-GsPlugin-Exports.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="gnome-software-GsPlugin-Exports.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gs-plugin-initialize"></a><h3>gs_plugin_initialize ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_initialize (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Checks if the plugin should run, and if initializes it. If the plugin should
+not be run then <a class="link" href="GsPlugin.html#gs-plugin-set-enabled" title="gs_plugin_set_enabled ()"><code class="function">gs_plugin_set_enabled()</code></a> should be called.
+This is also the place to call <a class="link" href="GsPlugin.html#gs-plugin-alloc-data" title="gs_plugin_alloc_data ()"><code class="function">gs_plugin_alloc_data()</code></a> if private data is
+required for the plugin.</p>
+<p>NOTE: Do not do any failable actions in this function; use <a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-setup" title="gs_plugin_setup ()"><code class="function">gs_plugin_setup()</code></a>
+instead.</p>
+<div class="refsect3">
+<a name="gs-plugin-initialize.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-destroy"></a><h3>gs_plugin_destroy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_destroy (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>);</pre>
+<p>Called when the plugin should destroy any private data.</p>
+<div class="refsect3">
+<a name="gs-plugin-destroy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-adopt-app"></a><h3>gs_plugin_adopt_app ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_plugin_adopt_app (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                     <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>);</pre>
+<p>Called when an <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> has not been claimed (i.e. a management plugin has not
+been set).</p>
+<p>A claimed application means other plugins will not try to perform actions
+such as install, remove or update. Most applications are claimed when they
+are created.</p>
+<p>If a plugin can adopt this application then it should call
+<a class="link" href="GsApp.html#gs-app-set-management-plugin" title="gs_app_set_management_plugin ()"><code class="function">gs_app_set_management_plugin()</code></a> on <em class="parameter"><code>app</code></em>
+.</p>
+<div class="refsect3">
+<a name="gs-plugin-adopt-app.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-search"></a><h3>gs_plugin_add_search ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_search (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **values</code></em>,
+                      <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get search results for a specific query.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-search.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>values</p></td>
+<td class="parameter_description"><p>a NULL terminated list of search terms, e.g. [ "gnome", "software" ]</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-search.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-search-files"></a><h3>gs_plugin_add_search_files ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_search_files (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **values</code></em>,
+                            <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Called when searching for an application that provides a specific filename
+on the filesystem.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-search-files.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>values</p></td>
+<td class="parameter_description"><p>a list of filenames, e.g. [ "/usr/share/help/gimp/index.html" ]</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-search-files.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-search-what-provides"></a><h3>gs_plugin_add_search_what_provides ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_search_what_provides (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **values</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Called when searching for an application that provides specific defined tags,
+for instance a codec string or mime-type.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-search-what-provides.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a list of tags, e.g. [ "text/rtf" ]</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>values</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-String-Utility-Functions.html#GStrv"><span class="type">GStrv</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-search-what-provides.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-setup"></a><h3>gs_plugin_setup ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_setup (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Called when the plugin should set up the initial state, and with the write
+lock held.</p>
+<p>All functions can block, but should sent progress notifications, e.g. using
+<a class="link" href="GsApp.html#gs-app-set-progress" title="gs_app_set_progress ()"><code class="function">gs_app_set_progress()</code></a> if they will take more than tens of milliseconds
+to complete.</p>
+<p>This function will also not be called if <a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-initialize" title="gs_plugin_initialize ()"><code class="function">gs_plugin_initialize()</code></a> self-disabled.</p>
+<div class="refsect3">
+<a name="gs-plugin-setup.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-setup.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-installed"></a><h3>gs_plugin_add_installed ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_installed (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                         <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get the list of installed applications.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-installed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-installed.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-updates"></a><h3>gs_plugin_add_updates ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_updates (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                       <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get the list of pre-downloaded, pre-checked updates, with the write lock
+held.</p>
+<p>NOTE: Actually downloading the updates is normally done in
+<a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-refresh" title="gs_plugin_refresh ()"><code class="function">gs_plugin_refresh()</code></a> when called with <a class="link" href="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-PAYLOAD:CAPS"><code class="literal">GS_PLUGIN_REFRESH_FLAGS_PAYLOAD</code></a>.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-updates.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-updates.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-distro-upgrades"></a><h3>gs_plugin_add_distro_upgrades ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_distro_upgrades (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                               <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get the list of distribution upgrades. Due to the download size, these
+should not be downloaded until the user has explicitly opted-in.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a> of type
+<a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-KIND-OS-UPGRADE:CAPS"><code class="literal">AS_APP_KIND_OS_UPGRADE</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-distro-upgrades.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-distro-upgrades.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-sources"></a><h3>gs_plugin_add_sources ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_sources (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                       <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get the list of sources, for example the repos listed in /etc/yum.repos.d
+or the remotes configured in flatpak.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a> of type
+<a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-KIND-SOURCE:CAPS"><code class="literal">AS_APP_KIND_SOURCE</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-sources.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-sources.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-updates-historical"></a><h3>gs_plugin_add_updates_historical ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_updates_historical (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                                  <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get the list of historical updates, i.e. the updates that have just been
+installed.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-updates-historical.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-updates-historical.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-categories"></a><h3>gs_plugin_add_categories ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_categories (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> *list</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get the category tree, for instance Games-&gt;Action or Internet-&gt;Email.</p>
+<p>Plugins are expected to add new categories using <a href="/usr/share/gtk-doc/html/glibglib-Pointer-Arrays.html#g-ptr-array-add"><code class="function">g_ptr_array_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-categories.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a>
+<em class="parameter"><code>list</code></em>
+(element-type GsCategory): a <a href="/usr/share/gtk-doc/html/glibglib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-categories.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-category-apps"></a><h3>gs_plugin_add_category_apps ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_category_apps (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                             <em class="parameter"><code><a class="link" href="gnome-software-gs-category.html#GsCategory"><span class="type">GsCategory</span></a> *category</code></em>,
+                             <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get all the applications that match a specific category.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-category-apps.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>category</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-gs-category.html#GsCategory"><span class="type">GsCategory</span></a> * <em class="parameter"><code>list</code></em>
+: a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-category-apps.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-popular"></a><h3>gs_plugin_add_popular ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_popular (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                       <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get popular applications that should be featured on the main page as
+"Editors Picks".
+This is expected to be a curated list of applications that are high quality
+and feature-complete.</p>
+<p>The returned list of popular applications are not sorted, but each <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> has
+to be valid, for instance having a known state and a valid icon.
+If an insufficient number of applications are added by plugins then the
+section on the overview shell may be hidden.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-popular.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-popular.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-featured"></a><h3>gs_plugin_add_featured ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_featured (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                        <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get applications that should be featured as a large full-width banner on the
+overview page.
+This is expected to be a curated list of applications that are high quality
+and feature-complete.</p>
+<p>The returned list of popular applications are randomized in a way so that
+the same application is featured for the entire calendar day.</p>
+<p>NOTE: The UI code may expect that applications have additional metadata set on
+results, for instance <code class="code">GnomeSoftware::FeatureTile-css</code>.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-featured.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-featured.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-unvoted-reviews"></a><h3>gs_plugin_add_unvoted_reviews ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_unvoted_reviews (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                               <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the list of unvoted reviews. Only applications should be returned where
+there are reviews, and where the user has not previously moderated them.
+This function is supposed to be used to display a moderation panel for
+reviewers.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-unvoted-reviews.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-unvoted-reviews.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-refine"></a><h3>gs_plugin_refine ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_refine (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                  <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                  <em class="parameter"><code><a class="link" href="GsPlugin.html#GsPluginRefineFlags" title="GsPluginRefineFlags"><span class="type">GsPluginRefineFlags</span></a> flags</code></em>,
+                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Adds required information to a list of <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a>'s.
+This function is only really required when "batching up" requests, and most
+plugins are better using the per-app <a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-refine-app" title="gs_plugin_refine_app ()"><code class="function">gs_plugin_refine_app()</code></a> function.</p>
+<p>An example for when this is useful would be in the PackageKit plugin where
+we want to do one transaction of GetDetails with multiple source-ids rather
+than scheduling a large number of pending requests.</p>
+<div class="refsect3">
+<a name="gs-plugin-refine.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html#GsPluginRefineFlags" title="GsPluginRefineFlags"><span class="type">GsPluginRefineFlags</span></a>, e.g. <a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-LICENSE:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE"><code class="literal">GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-refine.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-refine-app"></a><h3>gs_plugin_refine_app ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_refine_app (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                      <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                      <em class="parameter"><code><a class="link" href="GsPlugin.html#GsPluginRefineFlags" title="GsPluginRefineFlags"><span class="type">GsPluginRefineFlags</span></a> flags</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Adds required information to <em class="parameter"><code>app</code></em>
+.</p>
+<p>The general idea for <em class="parameter"><code>flags</code></em>
+ is that this indicates what the UI needs at the
+moment. This doesn't mean you can't add more information if you have it,
+for example, if we requested <a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-LICENSE:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE"><code class="literal">GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE</code></a> and had
+to do some IO to get a blob of data, we can use <a class="link" href="GsApp.html#gs-app-set-license" title="gs_app_set_license ()"><code class="function">gs_app_set_license()</code></a> *and*
+<a class="link" href="GsApp.html#gs-app-set-origin" title="gs_app_set_origin ()"><code class="function">gs_app_set_origin()</code></a> even though only the first thing was specified.</p>
+<p>If the plugin can't handle applications of the specific kind, or if the
+plugin knows not of the <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> ID then it should just ignore the request and
+return FALSE.</p>
+<div class="refsect3">
+<a name="gs-plugin-refine-app.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html#GsPluginRefineFlags" title="GsPluginRefineFlags"><span class="type">GsPluginRefineFlags</span></a>, e.g. <a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-LICENSE:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE"><code class="literal">GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-refine-app.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-refine-wildcard"></a><h3>gs_plugin_refine_wildcard ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_refine_wildcard (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                           <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                           <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                           <em class="parameter"><code><a class="link" href="GsPlugin.html#GsPluginRefineFlags" title="GsPluginRefineFlags"><span class="type">GsPluginRefineFlags</span></a> flags</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Adds applications that match the wildcard specified in <em class="parameter"><code>app</code></em>
+.</p>
+<p>The general idea is that plugins create and add *new* applications rather
+than all trying to fight over the wildcard application.
+This allows the plugin loader to filter using the <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> priority value.</p>
+<div class="refsect3">
+<a name="gs-plugin-refine-wildcard.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html#GsPluginRefineFlags" title="GsPluginRefineFlags"><span class="type">GsPluginRefineFlags</span></a>, e.g. <a class="link" href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-LICENSE:CAPS" title="GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE"><code class="literal">GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-refine-wildcard.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-launch"></a><h3>gs_plugin_launch ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_launch (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                  <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Launch the specified application using a plugin-specific method.
+This is normally setting some environment or launching a specific binary.</p>
+<p>Plugins can simply use <a class="link" href="GsPlugin.html#gs-plugin-app-launch" title="gs_plugin_app_launch ()"><code class="function">gs_plugin_app_launch()</code></a> if no plugin-specific
+functionality is required.</p>
+<div class="refsect3">
+<a name="gs-plugin-launch.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-launch.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-add-shortcut"></a><h3>gs_plugin_add_shortcut ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_add_shortcut (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                        <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Adds a shortcut for the application in a desktop-defined location.</p>
+<div class="refsect3">
+<a name="gs-plugin-add-shortcut.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-add-shortcut.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-remove-shortcut"></a><h3>gs_plugin_remove_shortcut ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_remove_shortcut (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                           <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Removes a shortcut for the application in a desktop-defined location.</p>
+<div class="refsect3">
+<a name="gs-plugin-remove-shortcut.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-remove-shortcut.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-update-cancel"></a><h3>gs_plugin_update_cancel ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_update_cancel (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                         <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Cancels the offline update of <em class="parameter"><code>app</code></em>
+.</p>
+<div class="refsect3">
+<a name="gs-plugin-update-cancel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-update-cancel.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-app-install"></a><h3>gs_plugin_app_install ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_app_install (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                       <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Install the application.</p>
+<p>Plugins are expected to send progress notifications to the UI using
+<a class="link" href="GsApp.html#gs-app-set-progress" title="gs_app_set_progress ()"><code class="function">gs_app_set_progress()</code></a> using the passed in <em class="parameter"><code>app</code></em>
+.</p>
+<p>All functions can block, but should sent progress notifications, e.g. using
+<a class="link" href="GsApp.html#gs-app-set-progress" title="gs_app_set_progress ()"><code class="function">gs_app_set_progress()</code></a> if they will take more than tens of milliseconds
+to complete.</p>
+<p>On failure the error message returned will usually only be shown on the
+console, but it may also be retained on the <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> object.
+The UI code can retrieve the error using <code class="function">gs_app_get_last_error()</code>.</p>
+<p>NOTE: Once the action is complete, the plugin must set the new state of <em class="parameter"><code>app</code></em>
+
+to <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-STATE-INSTALLED:CAPS"><code class="literal">AS_APP_STATE_INSTALLED</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-app-install.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-app-install.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-app-remove"></a><h3>gs_plugin_app_remove ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_app_remove (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                      <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Remove the application.</p>
+<p>Plugins are expected to send progress notifications to the UI using
+<a class="link" href="GsApp.html#gs-app-set-progress" title="gs_app_set_progress ()"><code class="function">gs_app_set_progress()</code></a> using the passed in <em class="parameter"><code>app</code></em>
+.</p>
+<p>All functions can block, but should sent progress notifications, e.g. using
+<a class="link" href="GsApp.html#gs-app-set-progress" title="gs_app_set_progress ()"><code class="function">gs_app_set_progress()</code></a> if they will take more than tens of milliseconds
+to complete.</p>
+<p>On failure the error message returned will usually only be shown on the
+console, but it may also be retained on the <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> object.
+The UI code can retrieve the error using <code class="function">gs_app_get_last_error()</code>.</p>
+<p>NOTE: Once the action is complete, the plugin must set the new state of <em class="parameter"><code>app</code></em>
+
+to <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-STATE-AVAILABLE:CAPS"><code class="literal">AS_APP_STATE_AVAILABLE</code></a> or <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-STATE-UNKNOWN:CAPS"><code class="literal">AS_APP_STATE_UNKNOWN</code></a> if not known.</p>
+<div class="refsect3">
+<a name="gs-plugin-app-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-app-remove.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-app-set-rating"></a><h3>gs_plugin_app_set_rating ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_app_set_rating (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                          <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets any ratings for the applications.</p>
+<p>Plugins are expected to call <a class="link" href="GsApp.html#gs-app-set-rating" title="gs_app_set_rating ()"><code class="function">gs_app_set_rating()</code></a> on <em class="parameter"><code>app</code></em>
+.</p>
+<div class="refsect3">
+<a name="gs-plugin-app-set-rating.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-app-set-rating.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-update-app"></a><h3>gs_plugin_update_app ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_update_app (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                      <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Update the application live.</p>
+<p>Plugins are expected to send progress notifications to the UI using
+<a class="link" href="GsApp.html#gs-app-set-progress" title="gs_app_set_progress ()"><code class="function">gs_app_set_progress()</code></a> using the passed in <em class="parameter"><code>app</code></em>
+.</p>
+<p>All functions can block, but should sent progress notifications, e.g. using
+<a class="link" href="GsApp.html#gs-app-set-progress" title="gs_app_set_progress ()"><code class="function">gs_app_set_progress()</code></a> if they will take more than tens of milliseconds
+to complete.</p>
+<p>On failure the error message returned will usually only be shown on the
+console, but it may also be retained on the <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> object.
+The UI code can retrieve the error using <code class="function">gs_app_get_last_error()</code>.</p>
+<p>NOTE: Once the action is complete, the plugin must set the new state of <em class="parameter"><code>app</code></em>
+
+to <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-STATE-INSTALLED:CAPS"><code class="literal">AS_APP_STATE_INSTALLED</code></a> or <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-STATE-UNKNOWN:CAPS"><code class="literal">AS_APP_STATE_UNKNOWN</code></a> if not known.</p>
+<div class="refsect3">
+<a name="gs-plugin-update-app.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-update-app.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-app-upgrade-download"></a><h3>gs_plugin_app_upgrade_download ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_app_upgrade_download (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                                <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Starts downloading a distribution upgrade in the background.</p>
+<p>All functions can block, but should sent progress notifications, e.g. using
+<a class="link" href="GsApp.html#gs-app-set-progress" title="gs_app_set_progress ()"><code class="function">gs_app_set_progress()</code></a> if they will take more than tens of milliseconds
+to complete.</p>
+<div class="refsect3">
+<a name="gs-plugin-app-upgrade-download.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a>, with kind <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-KIND-OS-UPGRADE:CAPS"><code class="literal">AS_APP_KIND_OS_UPGRADE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-app-upgrade-download.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-app-upgrade-trigger"></a><h3>gs_plugin_app_upgrade_trigger ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_app_upgrade_trigger (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                               <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Triggers the distribution upgrade to be installed on next boot.</p>
+<div class="refsect3">
+<a name="gs-plugin-app-upgrade-trigger.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a>, with kind <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-KIND-OS-UPGRADE:CAPS"><code class="literal">AS_APP_KIND_OS_UPGRADE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-app-upgrade-trigger.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-review-submit"></a><h3>gs_plugin_review_submit ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_review_submit (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                         <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                         <em class="parameter"><code><span class="type">AsReview</span> *review</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Submits a new end-user application review.</p>
+<div class="refsect3">
+<a name="gs-plugin-review-submit.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>review</p></td>
+<td class="parameter_description"><p>a <span class="type">AsReview</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-review-submit.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-review-upvote"></a><h3>gs_plugin_review_upvote ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_review_upvote (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                         <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                         <em class="parameter"><code><span class="type">AsReview</span> *review</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Upvote a specific review to indicate the review is helpful.</p>
+<div class="refsect3">
+<a name="gs-plugin-review-upvote.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>review</p></td>
+<td class="parameter_description"><p>a <span class="type">AsReview</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-review-upvote.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-review-downvote"></a><h3>gs_plugin_review_downvote ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_review_downvote (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                           <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                           <em class="parameter"><code><span class="type">AsReview</span> *review</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Downvote a specific review to indicate the review is unhelpful.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-review-downvote.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>review</p></td>
+<td class="parameter_description"><p>a <span class="type">AsReview</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-review-downvote.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-review-report"></a><h3>gs_plugin_review_report ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_review_report (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                         <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                         <em class="parameter"><code><span class="type">AsReview</span> *review</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Report a review that is not suitable in some way.
+It is expected that this action flags a review to be checked by a moderator
+and that the review won't be shown to any users until this happens.</p>
+<div class="refsect3">
+<a name="gs-plugin-review-report.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>review</p></td>
+<td class="parameter_description"><p>a <span class="type">AsReview</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-review-report.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-review-remove"></a><h3>gs_plugin_review_remove ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_review_remove (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                         <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                         <em class="parameter"><code><span class="type">AsReview</span> *review</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Remove a review that the user wrote.
+NOTE: Users should only be able to remove reviews with <code class="literal">AS_REVIEW_FLAG_SELF</code>.</p>
+<div class="refsect3">
+<a name="gs-plugin-review-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>review</p></td>
+<td class="parameter_description"><p>a <span class="type">AsReview</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-review-remove.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-review-dismiss"></a><h3>gs_plugin_review_dismiss ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_review_dismiss (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                          <em class="parameter"><code><a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> *app</code></em>,
+                          <em class="parameter"><code><span class="type">AsReview</span> *review</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Dismisses a review, i.e. hide it from future moderated views.
+This action is useful when the moderator is unable to speak the language of
+the review for example.</p>
+<div class="refsect3">
+<a name="gs-plugin-review-dismiss.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>review</p></td>
+<td class="parameter_description"><p>a <span class="type">AsReview</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-review-dismiss.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-refresh"></a><h3>gs_plugin_refresh ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_refresh (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#guint"><span class="type">guint</span></a> cache_age</code></em>,
+                   <em class="parameter"><code><a class="link" href="GsPlugin.html#GsPluginRefreshFlags" title="enum GsPluginRefreshFlags"><span class="type">GsPluginRefreshFlags</span></a> flags</code></em>,
+                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Refreshes the state of all the plugins.</p>
+<p>The <a class="link" href="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-METADATA:CAPS"><code class="literal">GS_PLUGIN_REFRESH_FLAGS_METADATA</code></a> flag can be used to make sure
+there's enough metadata to start the application, for example lists of
+available applications.</p>
+<p>The <a class="link" href="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-PAYLOAD:CAPS"><code class="literal">GS_PLUGIN_REFRESH_FLAGS_PAYLOAD</code></a> flag should only be used when
+the session is idle and bandwidth is unmetered as the amount of data
+and IO may be large.
+This is used to pre-download package updates and firmware.</p>
+<p>All functions can block, but should sent progress notifications, e.g. using
+<a class="link" href="GsApp.html#gs-app-set-progress" title="gs_app_set_progress ()"><code class="function">gs_app_set_progress()</code></a> if they will take more than tens of milliseconds
+to complete.</p>
+<div class="refsect3">
+<a name="gs-plugin-refresh.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cache_age</p></td>
+<td class="parameter_description"><p>the acceptable cache age in seconds, or MAXUINT for "any"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a bitfield of <a class="link" href="GsPlugin.html#GsPluginRefreshFlags" title="enum GsPluginRefreshFlags"><span class="type">GsPluginRefreshFlags</span></a>, e.g. <a class="link" href="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-METADATA:CAPS"><code class="literal">GS_PLUGIN_REFRESH_FLAGS_METADATA</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-refresh.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-file-to-app"></a><h3>gs_plugin_file_to_app ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_file_to_app (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                       <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *list</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGFile.html#GFile-struct"><span class="type">GFile</span></a> *file</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Converts a local file to a <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a>. It's expected that only one plugin will
+match the mimetype of <em class="parameter"><code>file</code></em>
+ and that a single <a class="link" href="GsApp.html" title="GsApp"><span class="type">GsApp</span></a> will be in the returned
+list. If no plugins can handle the file, the list will be empty.</p>
+<p>For example, the PackageKit plugin can turn a .rpm file into a application
+of kind <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-KIND-UNKNOWN:CAPS"><code class="literal">AS_APP_KIND_UNKNOWN</code></a> but that in some cases it will be futher refined
+into a <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-KIND-DESKTOP:CAPS"><code class="literal">AS_APP_KIND_DESKTOP</code></a> (with all the extra metadata) by the appstream
+plugin.</p>
+<p>Plugins are expected to add new apps using <a class="link" href="GsAppList.html#gs-app-list-add" title="gs_app_list_add ()"><code class="function">gs_app_list_add()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-plugin-file-to-app.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>file</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGFile.html#GFile-struct"><span class="type">GFile</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-file-to-app.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-update"></a><h3>gs_plugin_update ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_update (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                  <em class="parameter"><code><a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a> *apps</code></em>,
+                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Updates a list of applications, typically scheduling them for offline update.</p>
+<div class="refsect3">
+<a name="gs-plugin-update.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>apps</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsAppList.html" title="GsAppList"><span class="type">GsAppList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-update.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-auth-login"></a><h3>gs_plugin_auth_login ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_auth_login (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                      <em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Performs a login using the given authentication details.</p>
+<div class="refsect3">
+<a name="gs-plugin-auth-login.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-auth-login.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-auth-logout"></a><h3>gs_plugin_auth_logout ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_auth_logout (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                       <em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Performs a logout using the given authentication details.</p>
+<div class="refsect3">
+<a name="gs-plugin-auth-logout.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-auth-logout.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-auth-lost-password"></a><h3>gs_plugin_auth_lost_password ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_auth_lost_password (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                              <em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Performs the lost password action using the given authentication details.</p>
+<div class="refsect3">
+<a name="gs-plugin-auth-lost-password.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-auth-lost-password.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-plugin-auth-register"></a><h3>gs_plugin_auth_register ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_plugin_auth_register (<em class="parameter"><code><a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a> *plugin</code></em>,
+                         <em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Performs the registration action using the given authentication details.</p>
+<div class="refsect3">
+<a name="gs-plugin-auth-register.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GsPlugin.html" title="GsPlugin Helpers"><span class="type">GsPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-plugin-auth-register.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success or if not relevant</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gnome-software-GsPlugin-Exports.other_details"></a><h2>Types and Values</h2>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.25</div>
+</body>
+</html>

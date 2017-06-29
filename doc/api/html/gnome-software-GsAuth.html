@@ -1,0 +1,1109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GsAuth: GNOME Software Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Software Reference Manual">
+<link rel="up" href="api.html" title="GNOME Software Plugin API">
+<link rel="prev" href="gnome-software-gs-category.html" title="gs-category">
+<link rel="next" href="GsOsRelease.html" title="GsOsRelease">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#gnome-software-GsAuth.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gnome-software-gs-category.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GsOsRelease.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gnome-software-GsAuth"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gnome-software-GsAuth.top_of_page"></a>GsAuth</span></h2>
+<p>GsAuth — User data used for authentication</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="gnome-software-GsAuth.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Unstable"><span class="acronym">Unstable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="gnome-software-GsAuth.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="returnvalue">GsAuth</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-new" title="gs_auth_new ()">gs_auth_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-get-provider-id" title="gs_auth_get_provider_id ()">gs_auth_get_provider_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-get-provider-name" title="gs_auth_get_provider_name ()">gs_auth_get_provider_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-set-provider-name" title="gs_auth_set_provider_name ()">gs_auth_set_provider_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-get-provider-logo" title="gs_auth_get_provider_logo ()">gs_auth_get_provider_logo</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-set-provider-logo" title="gs_auth_set_provider_logo ()">gs_auth_set_provider_logo</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-get-provider-uri" title="gs_auth_get_provider_uri ()">gs_auth_get_provider_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-set-provider-uri" title="gs_auth_set_provider_uri ()">gs_auth_set_provider_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-get-provider-schema" title="gs_auth_get_provider_schema ()">gs_auth_get_provider_schema</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-set-provider-schema" title="gs_auth_set_provider_schema ()">gs_auth_set_provider_schema</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-get-username" title="gs_auth_get_username ()">gs_auth_get_username</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-set-username" title="gs_auth_set_username ()">gs_auth_set_username</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-get-password" title="gs_auth_get_password ()">gs_auth_get_password</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-set-password" title="gs_auth_set_password ()">gs_auth_set_password</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-get-pin" title="gs_auth_get_pin ()">gs_auth_get_pin</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-set-pin" title="gs_auth_set_pin ()">gs_auth_set_pin</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="gnome-software-GsAuth.html#GsAuthFlags" title="enum GsAuthFlags"><span class="returnvalue">GsAuthFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-get-flags" title="gs_auth_get_flags ()">gs_auth_get_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-set-flags" title="gs_auth_set_flags ()">gs_auth_set_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-add-flags" title="gs_auth_add_flags ()">gs_auth_add_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-has-flag" title="gs_auth_has_flag ()">gs_auth_has_flag</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-get-metadata-item" title="gs_auth_get_metadata_item ()">gs_auth_get_metadata_item</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-add-metadata" title="gs_auth_add_metadata ()">gs_auth_add_metadata</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-store-load" title="gs_auth_store_load ()">gs_auth_store_load</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gnome-software-GsAuth.html#gs-auth-store-save" title="gs_auth_store_save ()">gs_auth_store_save</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gnome-software-GsAuth.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="gnome-software-GsAuth.html#GS-TYPE-AUTH:CAPS" title="GS_TYPE_AUTH">GS_TYPE_AUTH</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="gnome-software-GsAuth.html#GsAuthFlags" title="enum GsAuthFlags">GsAuthFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="gnome-software-GsAuth.html#GsAuthStoreFlags" title="enum GsAuthStoreFlags">GsAuthStoreFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth">GsAuth</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gnome-software-GsAuth.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;gnome-software.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="gnome-software-GsAuth.description"></a><h2>Description</h2>
+<p>This object represents user data used for authentication.
+This data is shared between all plugins.</p>
+</div>
+<div class="refsect1">
+<a name="gnome-software-GsAuth.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gs-auth-new"></a><h3>gs_auth_new ()</h3>
+<pre class="programlisting"><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="returnvalue">GsAuth</span></a> *
+gs_auth_new (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider_id</code></em>);</pre>
+<div class="refsect3">
+<a name="gs-auth-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>provider_id</p></td>
+<td class="parameter_description"><p>a provider ID used for mapping, e.g. "GnomeSSO"</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-new.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> object.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-get-provider-id"></a><h3>gs_auth_get_provider_id ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_auth_get_provider_id (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>);</pre>
+<p>Gets the authentication service ID.</p>
+<div class="refsect3">
+<a name="gs-auth-get-provider-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-get-provider-id.returns"></a><h4>Returns</h4>
+<p> the string to use for searching, e.g. "UbuntuOne"</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-get-provider-name"></a><h3>gs_auth_get_provider_name ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_auth_get_provider_name (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>);</pre>
+<p>Gets the authentication service name.</p>
+<div class="refsect3">
+<a name="gs-auth-get-provider-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-get-provider-name.returns"></a><h4>Returns</h4>
+<p> the string to show in the UI</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-set-provider-name"></a><h3>gs_auth_set_provider_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_auth_set_provider_name (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                           <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider_name</code></em>);</pre>
+<p>Sets the name to be used for the authentication dialog.</p>
+<div class="refsect3">
+<a name="gs-auth-set-provider-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>provider_name</p></td>
+<td class="parameter_description"><p>a service name, e.g. "GNOME Online Accounts"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-get-provider-logo"></a><h3>gs_auth_get_provider_logo ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_auth_get_provider_logo (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>);</pre>
+<p>Gets the authentication service image.</p>
+<div class="refsect3">
+<a name="gs-auth-get-provider-logo.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-get-provider-logo.returns"></a><h4>Returns</h4>
+<p> the filename of an image, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-set-provider-logo"></a><h3>gs_auth_set_provider_logo ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_auth_set_provider_logo (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                           <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider_logo</code></em>);</pre>
+<p>Sets the image to be used for the authentication dialog.</p>
+<div class="refsect3">
+<a name="gs-auth-set-provider-logo.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>provider_logo</p></td>
+<td class="parameter_description"><p>an image, e.g. "/usr/share/icons/gnome-online.png"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-get-provider-uri"></a><h3>gs_auth_get_provider_uri ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_auth_get_provider_uri (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>);</pre>
+<p>Gets the authentication service website.</p>
+<div class="refsect3">
+<a name="gs-auth-get-provider-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-get-provider-uri.returns"></a><h4>Returns</h4>
+<p> the URI, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-set-provider-uri"></a><h3>gs_auth_set_provider_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_auth_set_provider_uri (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider_uri</code></em>);</pre>
+<p>Sets the website to be used for the authentication dialog.</p>
+<div class="refsect3">
+<a name="gs-auth-set-provider-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>provider_uri</p></td>
+<td class="parameter_description"><p>a URI, e.g. "http://www.gnome.org/sso"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-get-provider-schema"></a><h3>gs_auth_get_provider_schema ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_auth_get_provider_schema (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>);</pre>
+<p>Gets the authentication schema ID.</p>
+<div class="refsect3">
+<a name="gs-auth-get-provider-schema.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-get-provider-schema.returns"></a><h4>Returns</h4>
+<p> the URI, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-set-provider-schema"></a><h3>gs_auth_set_provider_schema ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_auth_set_provider_schema (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                             <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider_schema</code></em>);</pre>
+<p>Sets the schema ID to be used for saving the state to disk.</p>
+<div class="refsect3">
+<a name="gs-auth-set-provider-schema.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>provider_schema</p></td>
+<td class="parameter_description"><p>a URI, e.g. "com.distro.provider"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-get-username"></a><h3>gs_auth_get_username ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_auth_get_username (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>);</pre>
+<p>Gets the auth username.</p>
+<div class="refsect3">
+<a name="gs-auth-get-username.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-get-username.returns"></a><h4>Returns</h4>
+<p> the username to be used for the authentication</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-set-username"></a><h3>gs_auth_set_username ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_auth_set_username (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *username</code></em>);</pre>
+<p>Sets the username to be used for the authentication.</p>
+<div class="refsect3">
+<a name="gs-auth-set-username.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>username</p></td>
+<td class="parameter_description"><p>a username, e.g. "hughsie"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-get-password"></a><h3>gs_auth_get_password ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_auth_get_password (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>);</pre>
+<p>Gets the password to be used for the authentication.</p>
+<div class="refsect3">
+<a name="gs-auth-get-password.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-get-password.returns"></a><h4>Returns</h4>
+<p> the string, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-set-password"></a><h3>gs_auth_set_password ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_auth_set_password (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *password</code></em>);</pre>
+<p>Sets the password to be used for the authentication.</p>
+<div class="refsect3">
+<a name="gs-auth-set-password.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>password</p></td>
+<td class="parameter_description"><p>password string, e.g. "p<em class="parameter"><code>ssw0rd</code></em>
+"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-get-pin"></a><h3>gs_auth_get_pin ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_auth_get_pin (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>);</pre>
+<p>Gets the PIN code.</p>
+<div class="refsect3">
+<a name="gs-auth-get-pin.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-get-pin.returns"></a><h4>Returns</h4>
+<p> the 2 factor authentication PIN, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-set-pin"></a><h3>gs_auth_set_pin ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_auth_set_pin (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                 <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *pin</code></em>);</pre>
+<p>Sets the 2 factor authentication PIN, which can be left unset.</p>
+<div class="refsect3">
+<a name="gs-auth-set-pin.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pin</p></td>
+<td class="parameter_description"><p>the PIN code, e.g. "12345"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-get-flags"></a><h3>gs_auth_get_flags ()</h3>
+<pre class="programlisting"><a class="link" href="gnome-software-GsAuth.html#GsAuthFlags" title="enum GsAuthFlags"><span class="returnvalue">GsAuthFlags</span></a>
+gs_auth_get_flags (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>);</pre>
+<p>Gets any flags set on the authentication, for example if we should remember
+credentials.</p>
+<div class="refsect3">
+<a name="gs-auth-get-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-get-flags.returns"></a><h4>Returns</h4>
+<p> a <a class="link" href="gnome-software-GsAuth.html#GsAuthFlags" title="enum GsAuthFlags"><span class="type">GsAuthFlags</span></a>, e.g. <a class="link" href="gnome-software-GsAuth.html#GS-AUTH-FLAG-REMEMBER:CAPS"><code class="literal">GS_AUTH_FLAG_REMEMBER</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-set-flags"></a><h3>gs_auth_set_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_auth_set_flags (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                   <em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuthFlags" title="enum GsAuthFlags"><span class="type">GsAuthFlags</span></a> flags</code></em>);</pre>
+<p>Gets any flags set on the authentication.</p>
+<div class="refsect3">
+<a name="gs-auth-set-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuthFlags" title="enum GsAuthFlags"><span class="type">GsAuthFlags</span></a>, e.g. <a class="link" href="gnome-software-GsAuth.html#GS-AUTH-FLAG-REMEMBER:CAPS"><code class="literal">GS_AUTH_FLAG_REMEMBER</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-add-flags"></a><h3>gs_auth_add_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_auth_add_flags (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                   <em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuthFlags" title="enum GsAuthFlags"><span class="type">GsAuthFlags</span></a> flags</code></em>);</pre>
+<p>Adds flags to an existing authentication without replacing the other flags.</p>
+<div class="refsect3">
+<a name="gs-auth-add-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuthFlags" title="enum GsAuthFlags"><span class="type">GsAuthFlags</span></a>, e.g. <a class="link" href="gnome-software-GsAuth.html#GS-AUTH-FLAG-REMEMBER:CAPS"><code class="literal">GS_AUTH_FLAG_REMEMBER</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-has-flag"></a><h3>gs_auth_has_flag ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_auth_has_flag (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                  <em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuthFlags" title="enum GsAuthFlags"><span class="type">GsAuthFlags</span></a> flags</code></em>);</pre>
+<p>Finds ouf if the authentication has a flag.</p>
+<div class="refsect3">
+<a name="gs-auth-has-flag.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuthFlags" title="enum GsAuthFlags"><span class="type">GsAuthFlags</span></a>, e.g. <a class="link" href="gnome-software-GsAuth.html#GS-AUTH-FLAG-REMEMBER:CAPS"><code class="literal">GS_AUTH_FLAG_REMEMBER</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-has-flag.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if set</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-get-metadata-item"></a><h3>gs_auth_get_metadata_item ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gs_auth_get_metadata_item (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                           <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
+<p>Gets some metadata from a authentication object.
+It is left for the the plugin to use this method as required, but a
+typical use would be to retrieve some secure auth token.</p>
+<div class="refsect3">
+<a name="gs-auth-get-metadata-item.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-get-metadata-item.returns"></a><h4>Returns</h4>
+<p> A string value, or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for not found</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-add-metadata"></a><h3>gs_auth_add_metadata ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gs_auth_add_metadata (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>Adds metadata to the authentication object.
+It is left for the the plugin to use this method as required, but a
+typical use would be to store some secure auth token.</p>
+<div class="refsect3">
+<a name="gs-auth-add-metadata.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-store-load"></a><h3>gs_auth_store_load ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_auth_store_load (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                    <em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuthStoreFlags" title="enum GsAuthStoreFlags"><span class="type">GsAuthStoreFlags</span></a> flags</code></em>,
+                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Loads authentication tokens from disk in a secure way.
+By default only the username and password are loaded, but they are not
+overwritten if already set.</p>
+<p>If additional tokens are required to be loaded you must first tell the
+GsAuth instance what metadata to load. This can be done using:
+<code class="literal">gs_auth_add_metadata("additional-secret-key-name",NULL)</code></p>
+<p>This function is expected to be called from <a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-setup" title="gs_plugin_setup ()"><code class="function">gs_plugin_setup()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-auth-store-load.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>some <a class="link" href="gnome-software-GsAuth.html#GsAuthStoreFlags" title="enum GsAuthStoreFlags"><span class="type">GsAuthStoreFlags</span></a>, e.g. <a class="link" href="gnome-software-GsAuth.html#GS-AUTH-STORE-FLAG-USERNAME:CAPS"><code class="literal">GS_AUTH_STORE_FLAG_USERNAME</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-store-load.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the tokens were loaded correctly.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gs-auth-store-save"></a><h3>gs_auth_store_save ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gs_auth_store_save (<em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a> *auth</code></em>,
+                    <em class="parameter"><code><a class="link" href="gnome-software-GsAuth.html#GsAuthStoreFlags" title="enum GsAuthStoreFlags"><span class="type">GsAuthStoreFlags</span></a> flags</code></em>,
+                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Saves the username, password and all added metadata to disk in a secure way.</p>
+<p>This function is expected to be called from <a class="link" href="gnome-software-GsPlugin-Exports.html#gs-plugin-setup" title="gs_plugin_setup ()"><code class="function">gs_plugin_setup()</code></a>.</p>
+<div class="refsect3">
+<a name="gs-auth-store-save.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gnome-software-GsAuth.html#GsAuth" title="GsAuth"><span class="type">GsAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>some <a class="link" href="gnome-software-GsAuth.html#GsAuthStoreFlags" title="enum GsAuthStoreFlags"><span class="type">GsAuthStoreFlags</span></a>, e.g. <a class="link" href="gnome-software-GsAuth.html#GS-AUTH-STORE-FLAG-USERNAME:CAPS"><code class="literal">GS_AUTH_STORE_FLAG_USERNAME</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gioGCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glibglib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gs-auth-store-save.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the tokens were all saved correctly.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gnome-software-GsAuth.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GS-TYPE-AUTH:CAPS"></a><h3>GS_TYPE_AUTH</h3>
+<pre class="programlisting">#define GS_TYPE_AUTH (gs_auth_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsAuthFlags"></a><h3>enum GsAuthFlags</h3>
+<p>The flags for the auth.</p>
+<div class="refsect3">
+<a name="GsAuthFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GS-AUTH-FLAG-NONE:CAPS"></a>GS_AUTH_FLAG_NONE</p></td>
+<td class="enum_member_description">
+<p>No special flags set</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-AUTH-FLAG-VALID:CAPS"></a>GS_AUTH_FLAG_VALID</p></td>
+<td class="enum_member_description">
+<p>Authorisation is valid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-AUTH-FLAG-REMEMBER:CAPS"></a>GS_AUTH_FLAG_REMEMBER</p></td>
+<td class="enum_member_description">
+<p>Remember this authentication if possible</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsAuthStoreFlags"></a><h3>enum GsAuthStoreFlags</h3>
+<p>The flags used when loading or saving the authentication to disk.</p>
+<div class="refsect3">
+<a name="GsAuthStoreFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GS-AUTH-STORE-FLAG-NONE:CAPS"></a>GS_AUTH_STORE_FLAG_NONE</p></td>
+<td class="enum_member_description">
+<p>No special flags set</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-AUTH-STORE-FLAG-USERNAME:CAPS"></a>GS_AUTH_STORE_FLAG_USERNAME</p></td>
+<td class="enum_member_description">
+<p>Load or save the username</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-AUTH-STORE-FLAG-PASSWORD:CAPS"></a>GS_AUTH_STORE_FLAG_PASSWORD</p></td>
+<td class="enum_member_description">
+<p>Load or save the password</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GS-AUTH-STORE-FLAG-METADATA:CAPS"></a>GS_AUTH_STORE_FLAG_METADATA</p></td>
+<td class="enum_member_description">
+<p>Load or save any metadata</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GsAuth"></a><h3>GsAuth</h3>
+<pre class="programlisting">typedef struct _GsAuth GsAuth;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.25</div>
+</body>
+</html>

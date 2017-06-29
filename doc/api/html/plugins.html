@@ -1,0 +1,810 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GNOME Software Plugin Tutorial: GNOME Software Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Software Reference Manual">
+<link rel="up" href="index.html" title="GNOME Software Reference Manual">
+<link rel="prev" href="index.html" title="GNOME Software Reference Manual">
+<link rel="next" href="api.html" title="GNOME Software Plugin API">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
+<td><a accesskey="p" href="index.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="api.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="reference">
+<div class="titlepage">
+<div><div><h1 class="title">
+<a name="plugins"></a>GNOME Software Plugin Tutorial</h1></div></div>
+<hr>
+</div>
+<div class="partintro">
+<div></div>
+<p>
+        GNOME Software is a software installer designed to be easy to use.
+      </p>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.2.2"></a>Introduction</h2></div></div></div>
+<p>
+          At the heart of gnome software the application is just a plugin loader
+          that has some GTK UI that gets created for various result types.
+          The idea is we have lots of small plugins that each do one thing and
+          then pass the result onto the other plugins.
+          These are ordered by dependencies against each other at runtime and
+          each one can do things like editing an existing application or adding a
+          new application to the result set.
+          This is how we can add support for things like firmware updating,
+          Steam, GNOME Shell web-apps and flatpak bundles without making big
+          changes all over the source tree.
+        </p>
+<p>
+          There are broadly 3 types of plugin methods:
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p><span class="strong"><strong>Actions</strong></span>: Do something on a specific GsApp</p></li>
+<li class="listitem"><p><span class="strong"><strong>Refine</strong></span>: Get details about a specific GsApp</p></li>
+<li class="listitem"><p><span class="strong"><strong>Adopt</strong></span>: Can this plugin handle this GsApp</p></li>
+</ul></div>
+<p>
+          In general, building things out-of-tree isn't something that I think is
+          a very good idea; the API and ABI inside gnome-software is still
+          changing and there's a huge benefit to getting plugins upstream where
+          they can undergo review and be ported as the API adapts.
+          I'm also super keen to provide configurability in GSettings for doing
+          obviously-useful things, the sort of thing Fleet Commander can set for
+          groups of users.
+        </p>
+<p>
+          However, now we're shipping gnome-software in enterprise-class distros
+          we might want to allow customers to ship their own plugins to make
+          various business-specific changes that don't make sense upstream.
+          This might involve querying a custom LDAP server and changing the
+          suggested apps to reflect what groups the user is in, or might involve
+          showing a whole new class of applications that does not conform to the
+          Linux-specific <span class="emphasis"><em>application is a desktop-file</em></span> paradigm.
+          This is where a plugin makes sense.
+        </p>
+<p>
+          The plugin only needs to define the vfuncs that are required, and the
+          plugin name is taken automatically from the suffix of the
+          <code class="filename">.so</code> file.
+        </p>
+<div class="example">
+<a name="id-1.2.2.2.8"></a><p class="title"><b>Example 1. A sample plugin</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="comment">/*</span>
+<span class="comment"> * Copyright (C) 2016 Richard Hughes</span>
+<span class="comment"> */</span>
+
+<span class="preproc">#include</span><span class="normal"> </span><span class="string">&lt;gnome-software.h&gt;</span>
+
+<span class="type">void</span>
+<span class="function"><a href="gnome-software-GsPlugin-Exports.html#gs-plugin-initialize">gs_plugin_initialize</a></span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GsPlugin</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">plugin</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="function"><a href="GsPlugin.html#gs-plugin-add-rule">gs_plugin_add_rule</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">plugin</span><span class="symbol">,</span><span class="normal"> <a href="GsPlugin.html#GS-PLUGIN-RULE-RUN-BEFORE:CAPS">GS_PLUGIN_RULE_RUN_BEFORE</a></span><span class="symbol">,</span><span class="normal"> </span><span class="string">"appstream"</span><span class="symbol">);</span>
+<span class="cbracket">}</span>
+
+<span class="normal"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean">gboolean</a></span>
+<span class="function"><a href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-search">gs_plugin_add_search</a></span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GsPlugin</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">plugin</span><span class="symbol">,</span>
+<span class="normal">                      </span><span class="usertype">gchar</span><span class="normal"> </span><span class="symbol">**</span><span class="normal">values</span><span class="symbol">,</span>
+<span class="normal">                      </span><span class="usertype">GsAppList</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">list</span><span class="symbol">,</span>
+<span class="normal">                      </span><span class="usertype">GCancellable</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">cancellable</span><span class="symbol">,</span>
+<span class="normal">                      </span><span class="usertype">GError</span><span class="normal"> </span><span class="symbol">**</span><span class="normal">error</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="usertype">guint</span><span class="normal"> i</span><span class="symbol">;</span>
+<span class="normal">  </span><span class="keyword">for</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">i </span><span class="symbol">=</span><span class="normal"> </span><span class="number">0</span><span class="symbol">;</span><span class="normal"> values</span><span class="symbol">[</span><span class="normal">i</span><span class="symbol">]</span><span class="normal"> </span><span class="symbol">!=</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">;</span><span class="normal"> i</span><span class="symbol">++)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="/usr/share/gtk-doc/html/glibglib-String-Utility-Functions.html#g-strcmp0">g_strcmp0</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">values</span><span class="symbol">[</span><span class="normal">i</span><span class="symbol">],</span><span class="normal"> </span><span class="string">"fotoshop"</span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> </span><span class="number">0</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">      </span><span class="function"><a href="/usr/share/gtk-doc/html/glibglib-Miscellaneous-Macros.html#g-autoptr">g_autoptr</a></span><span class="symbol">(</span><span class="normal"><a href="GsApp.html#GsApp-struct">GsApp</a></span><span class="symbol">)</span><span class="normal"> app </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GsApp.html#gs-app-new">gs_app_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"gimp.desktop"</span><span class="symbol">);</span>
+<span class="normal">      </span><span class="function"><a href="GsApp.html#gs-app-add-quirk">gs_app_add_quirk</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-QUIRK-MATCH-ANY-PREFIX:CAPS">AS_APP_QUIRK_MATCH_ANY_PREFIX</a></span><span class="symbol">);</span>
+<span class="normal">      </span><span class="function"><a href="GsAppList.html#gs-app-list-add">gs_app_list_add</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">list</span><span class="symbol">,</span><span class="normal"> app</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="cbracket">}</span>
+<span class="normal">  </span><span class="cbracket">}</span>
+<span class="normal">  </span><span class="keyword">return</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS">TRUE</a></span><span class="symbol">;</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break"><p>
+          We have to define when our plugin is run in reference to other plugins,
+          in this case, making sure we run before <code class="code">appstream</code>.
+          As we're such a simple plugin we're relying on another plugin to run
+          after us to actually make the GsApp <span class="emphasis"><em>complete</em></span>,
+          i.e. loading icons and setting a localised long description.
+        </p>
+<p>
+          In this example we want to show GIMP as a result (from any provider,
+          e.g. flatpak or a distro package) when the user searches exactly for
+          <code class="code">fotoshop</code>.
+        </p>
+<p>
+          We can then build and install the plugin using:
+        </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">gcc </span><span class="symbol">-</span><span class="normal">shared </span><span class="symbol">-</span><span class="usertype">o</span><span class="normal"> libgs_plugin_example</span><span class="symbol">.</span><span class="usertype">so</span><span class="normal"> gs</span><span class="symbol">-</span><span class="normal">plugin</span><span class="symbol">-</span><span class="normal"><a href="/usr/share/gtk-doc/html/goocanvas2goocanvas-wysiwyg.html#example">example</a></span><span class="symbol">.</span><span class="normal">c </span><span class="symbol">-</span><span class="normal">fPIC </span><span class="symbol">\</span>
+<span class="normal"> `pkg</span><span class="symbol">-</span><span class="normal">config </span><span class="symbol">--</span><span class="normal">libs </span><span class="symbol">--</span><span class="usertype">cflags</span><span class="normal"> gnome</span><span class="symbol">-</span><span class="normal">software` </span><span class="symbol">\</span>
+<span class="normal"> </span><span class="symbol">-</span><span class="normal">DI_KNOW_THE_GNOME_SOFTWARE_API_IS_SUBJECT_TO_CHANGE </span><span class="symbol">&amp;&amp;</span>
+<span class="normal"> sudo </span><span class="usertype">cp</span><span class="normal"> libgs_plugin_example</span><span class="symbol">.</span><span class="normal">so `pkg</span><span class="symbol">-</span><span class="usertype">config</span><span class="normal"> gnome</span><span class="symbol">-</span><span class="normal">software </span><span class="symbol">--</span><span class="normal">variable</span><span class="symbol">=</span><span class="normal">plugindir`</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="mediaobject" align="center">
+<a name="gs-example-search"></a><img src="gs-example-search.png" align="middle">
+</div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.2.3"></a>Distribution Specific Functionality</h2></div></div></div>
+<p>
+          Some plugins should only run on specific distributions, for instance
+          the <code class="code">ubuntu-reviews</code> plugin should only be used on Ubuntu
+          systems.
+          This can be achieved with a simple runtime check using the helper
+          <code class="code">gs_plugin_check_distro_id()</code> method or the <code class="code">GsOsRelease</code>
+          object where more complicated rules are required.
+        </p>
+<div class="example">
+<a name="id-1.2.2.3.3"></a><p class="title"><b>Example 2. Self disabling on other distributions</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="type">void</span>
+<span class="function"><a href="gnome-software-GsPlugin-Exports.html#gs-plugin-initialize">gs_plugin_initialize</a></span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GsPlugin</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">plugin</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(!</span><span class="function"><a href="GsPlugin.html#gs-plugin-check-distro-id">gs_plugin_check_distro_id</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">plugin</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"ubuntu"</span><span class="symbol">))</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="function"><a href="GsPlugin.html#gs-plugin-set-enabled">gs_plugin_set_enabled</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">plugin</span><span class="symbol">,</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#FALSE:CAPS">FALSE</a></span><span class="symbol">);</span>
+<span class="normal">    </span><span class="keyword">return</span><span class="symbol">;</span>
+<span class="normal">  </span><span class="cbracket">}</span>
+<span class="normal">  </span><span class="comment">/* allocate private data etc. */</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break">
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.2.4"></a>Custom Applications in the Installed List</h2></div></div></div>
+<p>
+          Next is returning custom applications in the installed list.
+          The use case here is a proprietary software distribution method that
+          installs custom files into your home directory, but you can use your
+          imagination for how this could be useful.
+          The example here is all hardcoded, and a true plugin would have to
+          derive the details about the GsApp, for example reading in an XML
+          file or YAML config file somewhere.
+        </p>
+<div class="example">
+<a name="id-1.2.2.4.3"></a><p class="title"><b>Example 3. Example showing a custom installed application</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="preproc">#include</span><span class="normal"> </span><span class="string">&lt;gnome-software.h&gt;</span>
+
+<span class="type">void</span>
+<span class="function"><a href="gnome-software-GsPlugin-Exports.html#gs-plugin-initialize">gs_plugin_initialize</a></span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GsPlugin</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">plugin</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="function"><a href="GsPlugin.html#gs-plugin-add-rule">gs_plugin_add_rule</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">plugin</span><span class="symbol">,</span><span class="normal"> <a href="GsPlugin.html#GS-PLUGIN-RULE-RUN-BEFORE:CAPS">GS_PLUGIN_RULE_RUN_BEFORE</a></span><span class="symbol">,</span><span class="normal"> </span><span class="string">"icons"</span><span class="symbol">);</span>
+<span class="cbracket">}</span>
+
+<span class="normal"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean">gboolean</a></span>
+<span class="function"><a href="gnome-software-GsPlugin-Exports.html#gs-plugin-add-installed">gs_plugin_add_installed</a></span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GsPlugin</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">plugin</span><span class="symbol">,</span>
+<span class="normal">                         </span><span class="usertype">GsAppList</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">list</span><span class="symbol">,</span>
+<span class="normal">                         </span><span class="usertype">GCancellable</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">cancellable</span><span class="symbol">,</span>
+<span class="normal">                         </span><span class="usertype">GError</span><span class="normal"> </span><span class="symbol">**</span><span class="normal">error</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="usertype">g_autofree</span><span class="normal"> </span><span class="usertype">gchar</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">fn </span><span class="symbol">=</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">;</span>
+<span class="normal">  </span><span class="function"><a href="/usr/share/gtk-doc/html/glibglib-Miscellaneous-Macros.html#g-autoptr">g_autoptr</a></span><span class="symbol">(</span><span class="normal"><a href="GsApp.html#GsApp-struct">GsApp</a></span><span class="symbol">)</span><span class="normal"> app </span><span class="symbol">=</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">;</span>
+<span class="normal">  </span><span class="function"><a href="/usr/share/gtk-doc/html/glibglib-Miscellaneous-Macros.html#g-autoptr">g_autoptr</a></span><span class="symbol">(</span><span class="normal"><a href="/usr/share/gtk-doc/html/appstream-glibAsIcon.html#AsIcon-struct">AsIcon</a></span><span class="symbol">)</span><span class="normal"> icon </span><span class="symbol">=</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">;</span>
+
+<span class="normal">  </span><span class="comment">/* check if the app exists */</span>
+<span class="normal">  fn </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="/usr/share/gtk-doc/html/glibglib-Miscellaneous-Utility-Functions.html#g-build-filename">g_build_filename</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="/usr/share/gtk-doc/html/glibglib-Miscellaneous-Utility-Functions.html#g-get-home-dir">g_get_home_dir</a></span><span class="normal"> </span><span class="symbol">(),</span><span class="normal"> </span><span class="string">"chiron"</span><span class="symbol">,</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">);</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(!</span><span class="function"><a href="/usr/share/gtk-doc/html/glibglib-File-Utilities.html#g-file-test">g_file_test</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">fn</span><span class="symbol">,</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-File-Utilities.html#G-FILE-TEST-EXISTS:CAPS">G_FILE_TEST_EXISTS</a></span><span class="symbol">))</span>
+<span class="normal">    </span><span class="keyword">return</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS">TRUE</a></span><span class="symbol">;</span>
+
+<span class="normal">  </span><span class="comment">/* the trigger exists, so create a fake app */</span>
+<span class="normal">  app </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GsApp.html#gs-app-new">gs_app_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"example:chiron.desktop"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-set-management-plugin">gs_app_set_management_plugin</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"example"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-set-kind">gs_app_set_kind</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-KIND-DESKTOP:CAPS">AS_APP_KIND_DESKTOP</a></span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-set-state">gs_app_set_state</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-STATE-INSTALLED:CAPS">AS_APP_STATE_INSTALLED</a></span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-set-name">gs_app_set_name</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> <a href="GsApp.html#GS-APP-QUALITY-NORMAL:CAPS">GS_APP_QUALITY_NORMAL</a></span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Chiron"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-set-summary">gs_app_set_summary</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> <a href="GsApp.html#GS-APP-QUALITY-NORMAL:CAPS">GS_APP_QUALITY_NORMAL</a></span><span class="symbol">,</span><span class="normal"> </span><span class="string">"A teaching application"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-set-description">gs_app_set_description</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> <a href="GsApp.html#GS-APP-QUALITY-NORMAL:CAPS">GS_APP_QUALITY_NORMAL</a></span><span class="symbol">,</span>
+<span class="normal">        </span><span class="string">"Chiron is the name of an application.</span><span class="specialchar">\n\n</span><span class="string">"</span>
+<span class="normal">        </span><span class="string">"It can be used to demo some of our features"</span><span class="symbol">);</span>
+
+<span class="normal">  </span><span class="comment">/* these are all optional, but make details page looks better */</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-set-version">gs_app_set_version</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"1.2.3"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-set-size-installed">gs_app_set_size_installed</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> </span><span class="number">2</span><span class="normal"> </span><span class="symbol">*</span><span class="normal"> </span><span class="number">1024</span><span class="normal"> </span><span class="symbol">*</span><span class="normal"> </span><span class="number">1024</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-set-size-download">gs_app_set_size_download</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> </span><span class="number">3</span><span class="normal"> </span><span class="symbol">*</span><span class="normal"> </span><span class="number">1024</span><span class="normal"> </span><span class="symbol">*</span><span class="normal"> </span><span class="number">1024</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-set-origin-ui">gs_app_set_origin_ui</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"The example plugin"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-add-category">gs_app_add_category</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Game"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-add-category">gs_app_add_category</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"ActionGame"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-add-kudo">gs_app_add_kudo</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> <a href="GsApp.html#GS-APP-KUDO-INSTALLS-USER-DOCS:CAPS">GS_APP_KUDO_INSTALLS_USER_DOCS</a></span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-set-license">gs_app_set_license</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> <a href="GsApp.html#GS-APP-QUALITY-NORMAL:CAPS">GS_APP_QUALITY_NORMAL</a></span><span class="symbol">,</span><span class="normal"> </span><span class="string">"GPL-2.0+ and LGPL-2.1+"</span><span class="symbol">);</span>
+
+<span class="normal">  </span><span class="comment">/* create a stock icon which will be loaded by the 'icons' plugin */</span>
+<span class="normal">  icon </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="/usr/share/gtk-doc/html/appstream-glibAsIcon.html#as-icon-new">as_icon_new</a></span><span class="normal"> </span><span class="symbol">();</span>
+<span class="normal">  </span><span class="function"><a href="/usr/share/gtk-doc/html/appstream-glibAsIcon.html#as-icon-set-kind">as_icon_set_kind</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">icon</span><span class="symbol">,</span><span class="normal"> <a href="/usr/share/gtk-doc/html/appstream-glibAsIcon.html#AS-ICON-KIND-STOCK:CAPS">AS_ICON_KIND_STOCK</a></span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="/usr/share/gtk-doc/html/appstream-glibAsIcon.html#as-icon-set-name">as_icon_set_name</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">icon</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"input-gaming"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="GsApp.html#gs-app-add-icon">gs_app_add_icon</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> icon</span><span class="symbol">);</span>
+
+<span class="normal">  </span><span class="comment">/* return new app */</span>
+<span class="normal">  </span><span class="function"><a href="GsAppList.html#gs-app-list-add">gs_app_list_add</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">list</span><span class="symbol">,</span><span class="normal"> app</span><span class="symbol">);</span>
+
+<span class="normal">  </span><span class="keyword">return</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS">TRUE</a></span><span class="symbol">;</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break"><p>
+          This shows a lot of the plugin architecture in action. Some notable points:
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>
+              The application ID (<code class="code">example:chiron.desktop</code>) has a
+              prefix of <code class="code">example</code> which means we can co-exist with
+              any package or flatpak version of the Chiron application,
+              not setting the prefix would make the UI confused if more than
+              one <code class="code">chiron.desktop</code> got added.
+            </p></li>
+<li class="listitem"><p>
+              Setting the management plugin means we can check for this string
+              when working out if we can handle the install or remove action.
+            </p></li>
+<li class="listitem"><p>
+              Most applications want a kind of <code class="code">AS_APP_KIND_DESKTOP</code>
+              to be visible as an application.
+            </p></li>
+<li class="listitem"><p>
+              The origin is where the application originated from -- usually
+              this will be something like <span class="emphasis"><em>Fedora Updates</em></span>.
+            </p></li>
+<li class="listitem"><p>
+              The <code class="code">GS_APP_KUDO_INSTALLS_USER_DOCS</code> means we get the
+              blue "Documentation" award in the details page; there are many
+              kudos to award to deserving apps.
+            </p></li>
+<li class="listitem"><p>
+              Setting the license means we don't get the non-free warning --
+              removing the 3rd party warning can be done using
+              <code class="code">AS_APP_QUIRK_PROVENANCE</code>
+            </p></li>
+<li class="listitem"><p>
+              The <code class="code">icons</code> plugin will take the stock icon and convert
+              it to a pixbuf of the correct size.
+            </p></li>
+</ul></div>
+<p>
+          To show this fake application just compile and install the plugin,
+          <code class="code">touch ~/chiron</code> and then restart gnome-software.
+          To avoid restarting <code class="filename">gnome-software</code> each time a
+          proper plugin would create a <code class="code">GFileMonitor</code> object to
+          monitor files.
+        </p>
+<div class="mediaobject" align="center">
+<a name="gs-example-installed"></a><img src="gs-example-installed.png" align="middle">
+</div>
+<p>
+          By filling in the optional details (which can also be filled in using
+          <code class="code">gs_plugin_refine_app()</code> you can also make the details
+          page a much more exciting place.
+          Adding a set of screenshots is left as an exercise to the reader.
+        </p>
+<div class="mediaobject" align="center">
+<a name="gs-example-details"></a><img src="gs-example-details.png" align="middle">
+</div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.2.5"></a>Downloading Metadata and Updates</h2></div></div></div>
+<p>
+          The plugin loader supports a <code class="code">gs_plugin_refresh()</code> vfunc that
+          is called in various situations.
+          To ensure plugins have the minimum required metadata on disk it is
+          called at startup, but with a cache age of <span class="emphasis"><em>infinite</em></span>.
+          This basically means the plugin must just ensure that
+          <span class="strong"><strong>any</strong></span> data exists no matter what the age.
+        </p>
+<p>
+          Usually once per hour, we'll call <code class="code">gs_plugin_refresh()</code> but
+          with the correct cache age set (typically a little over 24 hours) which
+          allows the plugin to download new metadata or payload files from remote
+          servers.
+          The <code class="code">gs_utils_get_file_age()</code> utility helper can help you
+          work out the cache age of file, or the plugin can handle it some other
+          way.
+        </p>
+<p>
+          For the Flatpak plugin we just make sure the AppStream metadata exists
+          at startup, which allows us to show search results in the UI.
+          If the metadata did not exist (e.g. if the user had added a remote
+          using the command-line without gnome-software running) then we would
+          show a loading screen with a progress bar before showing the main UI.
+          On fast connections we should only show that for a couple of seconds,
+          but it's a good idea to try any avoid that if at all possible in the
+          plugin.
+          Once per day the <code class="code">gs_plugin_refresh()</code> method is called again,
+          but this time with <code class="code">GS_PLUGIN_REFRESH_FLAGS_PAYLOAD</code> set.
+          This is where the Flatpak plugin would download any ostree trees (but
+          not doing the deploy step) so that the applications can be updated live
+          in the details panel without having to wait for the download to complete.
+          In a similar way, the fwupd plugin downloads the tiny LVFS metadata with
+          <code class="code">GS_PLUGIN_REFRESH_FLAGS_METADATA</code> and then downloads the
+          large firmware files themselves only when the
+          <code class="code">GS_PLUGIN_REFRESH_FLAGS_PAYLOAD</code> flag is set.
+        </p>
+<p>
+          If the <code class="code">@app</code> parameter is set for
+          <code class="code">gs_plugin_download_file()</code> then the progress of the download
+          is automatically proxied to the UI elements associated with the
+          application, for instance the install button would show a progress bar
+          in the various different places in the UI.
+          For a refresh there's no relevant GsApp to use, so we'll leave it
+          <code class="code">NULL</code> which means something is happening globally which the
+          UI can handle how it wants, for instance showing a loading page at startup.
+        </p>
+<p>
+          Note, if the downloading fails it's okay to return <code class="code">FALSE</code>;
+          the plugin loader continues to run all plugins and just logs an error
+          to the console. We'll be calling into <code class="code">gs_plugin_refresh()</code>
+          again in only another hour, so there's no need to bother the user.
+          For actions like <code class="code">gs_plugin_app_install</code> we also do the same
+          thing, but we also save the error on the GsApp itself so that the UI is
+          free to handle that how it wants, for instance showing a GtkDialog
+          window for example.
+        </p>
+<div class="example">
+<a name="id-1.2.2.5.7"></a><p class="title"><b>Example 4. Refresh example</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean">gboolean</a></span>
+<span class="function"><a href="gnome-software-GsPlugin-Exports.html#gs-plugin-refresh">gs_plugin_refresh</a></span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GsPlugin</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">plugin</span><span class="symbol">,</span>
+<span class="normal">                   </span><span class="usertype">guint</span><span class="normal"> cache_age</span><span class="symbol">,</span>
+<span class="normal">                   </span><span class="usertype">GsPluginRefreshFlags</span><span class="normal"> flags</span><span class="symbol">,</span>
+<span class="normal">                   </span><span class="usertype">GCancellable</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">cancellable</span><span class="symbol">,</span>
+<span class="normal">                   </span><span class="usertype">GError</span><span class="normal"> </span><span class="symbol">**</span><span class="normal">error</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="keyword">const</span><span class="normal"> </span><span class="usertype">gchar</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">metadata_fn </span><span class="symbol">=</span><span class="normal"> </span><span class="string">"/var/cache/example/metadata.xml"</span><span class="symbol">;</span>
+<span class="normal">  </span><span class="keyword">const</span><span class="normal"> </span><span class="usertype">gchar</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">metadata_url </span><span class="symbol">=</span><span class="normal"> </span><span class="string">"http://www.example.com/new.xml"</span><span class="symbol">;</span>
+
+<span class="normal">  </span><span class="comment">/* this is called at startup and once per day */</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">flags </span><span class="symbol">&amp;</span><span class="normal"> <a href="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-METADATA:CAPS">GS_PLUGIN_REFRESH_FLAGS_METADATA</a></span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="function"><a href="/usr/share/gtk-doc/html/glibglib-Miscellaneous-Macros.html#g-autoptr">g_autoptr</a></span><span class="symbol">(</span><span class="normal"><a href="/usr/share/gtk-doc/html/gioGFile.html#GFile-struct">GFile</a></span><span class="symbol">)</span><span class="normal"> file </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="/usr/share/gtk-doc/html/gioGFile.html#g-file-new-for-path">g_file_new_for_path</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">metadata_fn</span><span class="symbol">);</span>
+
+<span class="normal">    </span><span class="comment">/* is the metadata missing or too old */</span>
+<span class="normal">    </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="gnome-software-GsUtils.html#gs-utils-get-file-age">gs_utils_get_file_age</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">file</span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">&gt;</span><span class="normal"> cache_age</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">      </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(!</span><span class="function"><a href="GsPlugin.html#gs-plugin-download-file">gs_plugin_download_file</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">plugin</span><span class="symbol">,</span>
+<span class="normal">                                    <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">,</span>
+<span class="normal">                                    metadata_url</span><span class="symbol">,</span>
+<span class="normal">                                    metadata_fn</span><span class="symbol">,</span>
+<span class="normal">                                    cancellable</span><span class="symbol">,</span>
+<span class="normal">                                    error</span><span class="symbol">))</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="comment">/* it's okay to fail here */</span>
+<span class="normal">        </span><span class="keyword">return</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#FALSE:CAPS">FALSE</a></span><span class="symbol">;</span>
+<span class="normal">      </span><span class="cbracket">}</span>
+<span class="normal">      </span><span class="function"><a href="/usr/share/gtk-doc/html/glibglib-Message-Logging.html#g-debug">g_debug</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"successfully downloaded new metadata"</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="cbracket">}</span>
+<span class="normal">  </span><span class="cbracket">}</span>
+
+<span class="normal">  </span><span class="comment">/* this is called when the session is idle */</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">((</span><span class="normal">flags </span><span class="symbol">&amp;</span><span class="normal"> <a href="GsPlugin.html#GS-PLUGIN-REFRESH-FLAGS-PAYLOAD:CAPS">GS_PLUGIN_REFRESH_FLAGS_PAYLOAD</a></span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> </span><span class="number">0</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="comment">// FIXME: download any required updates now</span>
+<span class="normal">  </span><span class="cbracket">}</span>
+<span class="normal">  </span><span class="keyword">return</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS">TRUE</a></span><span class="symbol">;</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break">
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.2.6"></a>Adding Application Information Using Refine</h2></div></div></div>
+<p>
+          As previous examples have shown it's very easy to add a new
+          application to the search results, updates list or installed list.
+          Some plugins don't want to add more applications, but want to modify
+          existing applications to add more information depending on what is
+          required by the UI code.
+          The reason we don't just add everything at once is that for
+          search-as-you-type to work effectively we need to return results in
+          less than about 50ms and querying some data can take a long time.
+          For example, it might take a few hundred ms to work out the download
+          size for an application when a plugin has to also look at what
+          dependencies are already installed.
+          We only need this information once the user has clicked the search
+          results and when the user is in the details panel, so we can save a
+          ton of time not working out properties that are not useful.
+        </p>
+<div class="example">
+<a name="id-1.2.2.6.3"></a><p class="title"><b>Example 5. Refine example</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gboolean">gboolean</a></span>
+<span class="function"><a href="gnome-software-GsPlugin-Exports.html#gs-plugin-refine-app">gs_plugin_refine_app</a></span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GsPlugin</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">plugin</span><span class="symbol">,</span>
+<span class="normal">                      </span><span class="usertype">GsApp</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">app</span><span class="symbol">,</span>
+<span class="normal">                      </span><span class="usertype">GsPluginRefineFlags</span><span class="normal"> flags</span><span class="symbol">,</span>
+<span class="normal">                      </span><span class="usertype">GCancellable</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">cancellable</span><span class="symbol">,</span>
+<span class="normal">                      </span><span class="usertype">GError</span><span class="normal"> </span><span class="symbol">**</span><span class="normal">error</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="comment">/* not required */</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">((</span><span class="normal">flags </span><span class="symbol">&amp;</span><span class="normal"> <a href="GsPlugin.html#GS-PLUGIN-REFINE-FLAGS-REQUIRE-LICENSE:CAPS">GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE</a></span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> </span><span class="number">0</span><span class="symbol">)</span>
+<span class="normal">    </span><span class="keyword">return</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS">TRUE</a></span><span class="symbol">;</span>
+
+<span class="normal">  </span><span class="comment">/* already set */</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="GsApp.html#gs-app-get-license">gs_app_get_license</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">!=</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">)</span>
+<span class="normal">    </span><span class="keyword">return</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS">TRUE</a></span><span class="symbol">;</span>
+
+<span class="normal">  </span><span class="comment">/* </span><span class="todo">FIXME</span><span class="comment">, not just hardcoded! */</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="/usr/share/gtk-doc/html/glibglib-String-Utility-Functions.html#g-strcmp0">g_strcmp0</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="GsApp.html#gs-app-get-id">gs_app_get_id</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"chiron.desktop"</span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> </span><span class="number">0</span><span class="symbol">))</span>
+<span class="normal">    </span><span class="function"><a href="GsApp.html#gs-app-set-license">gs_app_set_license</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"GPL-2.0 and LGPL-2.0+"</span><span class="symbol">);</span>
+
+<span class="normal">  </span><span class="keyword">return</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#TRUE:CAPS">TRUE</a></span><span class="symbol">;</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break"><p>
+          This is a simple example, but shows what a plugin needs to do.
+          It first checks if the action is required, in this case
+          <code class="code">GS_PLUGIN_REFINE_FLAGS_REQUIRE_LICENSE</code>.
+          This request is more common than you might expect as even the search
+          results shows a non-free label if the license is unspecified or
+          non-free.
+          It then checks if the license is already set, returning with success
+          if so.
+          If not, it checks the application ID and hardcodes a license; in the
+          real world this would be querying a database or parsing an additional
+          config file.
+          As mentioned before, if the license value is freely available without
+          any extra work then it's best just to set this at the same time as
+          when adding the app with <code class="code">gs_app_list_add()</code>.
+          Think of refine as <span class="emphasis"><em>adding things that cost time to
+          calculate only when really required</em></span>.
+        </p>
+<p>
+          The UI in gnome-software is quite forgiving for missing data, hiding
+          sections or labels as required.
+          Some things are required however, and forgetting to assign an icon or
+          short description will get the application vetoed so that it's not
+          displayed at all.
+          Helpfully, running <code class="code">gnome-software --verbose</code> on the
+          command line will tell you why an application isn't shown along with
+          any extra data.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.2.7"></a>Adopting AppStream Applications</h2></div></div></div>
+<p>
+          There's a lot of flexibility in the gnome-software plugin structure;
+          a plugin can add custom applications and handle things like search and
+          icon loading in a totally custom way.
+          Most of the time you don't care about how search is implemented or how
+          icons are going to be loaded, and you can re-use a lot of the existing
+          code in the <code class="code">appstream</code> plugin.
+          To do this you just save an AppStream-format XML file in either
+          <code class="filename">/usr/share/app-info/xmls/</code>,
+          <code class="filename">/var/cache/app-info/xmls/</code> or
+          <code class="filename">~/.local/share/app-info/xmls/</code>.
+          GNOME Software will immediately notice any new files, or changes to
+          existing files as it has set up the various inotify watches.
+        </p>
+<p>
+          This allows plugins to care a lot less about how applications are
+          going to be shown.
+          For example, the <code class="code">steam</code> plugin downloads and parses the
+          descriptions from a remote service during
+          <code class="code">gs_plugin_refresh()</code>, and also finds the best icon types
+          and downloads them too.
+          Then it exports the data to an AppStream XML file, saving it to your
+          home directory.
+          This allows all the applications to be easily created (and then refined)
+          using something as simple as <code class="code">gs_app_new("steam:foo.desktop")</code>.
+          All the search tokenisation and matching is done automatically,
+          so it makes the plugin much simpler and faster.
+        </p>
+<p>
+          The only extra step the steam plugin needs to do is implement the
+          <code class="code">gs_plugin_adopt_app()</code> function.
+          This is called when an application does not have a management plugin
+          set, and allows the plugin to <span class="emphasis"><em>claim</em></span> the
+          application for itself so it can handle installation, removal and
+          updating.
+          In the case of steam it could check the ID has a prefix of
+          <code class="code">steam:</code> or could check some other plugin-specific metadata
+          using <code class="code">gs_app_get_metadata_item()</code>.
+        </p>
+<p>
+          Another good example is the <code class="code">fwupd</code> that wants to handle
+          any firmware we've discovered in the AppStream XML.
+          This might be shipped by the vendor in a package using Satellite,
+          or downloaded from the LVFS. It wouldn't be kind to set a management
+          plugin explicitly in case XFCE or KDE want to handle this in a
+          different way. This adoption function in this case is trivial:
+        </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="type">void</span>
+<span class="function"><a href="gnome-software-GsPlugin-Exports.html#gs-plugin-adopt-app">gs_plugin_adopt_app</a></span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GsPlugin</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">plugin</span><span class="symbol">,</span><span class="normal"> </span><span class="usertype">GsApp</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">app</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="GsApp.html#gs-app-get-kind">gs_app_get_kind</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> <a href="/usr/share/gtk-doc/html/appstream-glibAsApp.html#AS-APP-KIND-FIRMWARE:CAPS">AS_APP_KIND_FIRMWARE</a></span><span class="symbol">)</span>
+<span class="normal">    </span><span class="function"><a href="GsApp.html#gs-app-set-management-plugin">gs_app_set_management_plugin</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"fwupd"</span><span class="symbol">);</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.2.8"></a>Using The Plugin Cache</h2></div></div></div>
+<p>
+          GNOME Software used to provide a per-process plugin cache,
+          automatically de-duplicating applications and trying to be smarter
+          than the plugins themselves.
+          This involved merging applications created by different plugins and
+          really didn't work very well.
+          For versions 3.20 and later we moved to a per-plugin cache which
+          allows the plugin to control getting and adding applications to the
+          cache and invalidating it when it made sense.
+          This seems to work a lot better and is an order of magnitude less
+          complicated.
+          Plugins can trivially be ported to using the cache using something
+          like this:
+        </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="comment">/* create new object */</span>
+<span class="normal">id </span><span class="symbol">=</span><span class="normal"> </span><span class="function">gs_plugin_flatpak_build_id</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">inst</span><span class="symbol">,</span><span class="normal"> xref</span><span class="symbol">);</span>
+<span class="symbol">-</span><span class="normal">  app </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GsApp.html#gs-app-new">gs_app_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">id</span><span class="symbol">);</span>
+<span class="symbol">+</span><span class="normal">  app </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GsPlugin.html#gs-plugin-cache-lookup">gs_plugin_cache_lookup</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">plugin</span><span class="symbol">,</span><span class="normal"> id</span><span class="symbol">);</span>
+<span class="symbol">+</span><span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">app </span><span class="symbol">==</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glibglib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="symbol">+</span><span class="normal">     app </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GsApp.html#gs-app-new">gs_app_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">id</span><span class="symbol">);</span>
+<span class="symbol">+</span><span class="normal">     </span><span class="function"><a href="GsPlugin.html#gs-plugin-cache-add">gs_plugin_cache_add</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">plugin</span><span class="symbol">,</span><span class="normal"> id</span><span class="symbol">,</span><span class="normal"> app</span><span class="symbol">);</span>
+<span class="symbol">+</span><span class="normal">  </span><span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+          Using the cache has two main benefits for plugins.
+          The first is that we avoid creating duplicate GsApp objects for the
+          same logical thing.
+          This means we can query the installed list, start installing an
+          application, then query it again before the install has finished.
+          The GsApp returned from the second <code class="code">add_installed()</code>
+          request will be the same GObject, and thus all the signals connecting
+          up to the UI will still be correct.
+          This means we don't have to care about <span class="emphasis"><em>migrating</em></span>
+          the UI widgets as the object changes and things like progress bars just
+          magically work.
+        </p>
+<p>
+          The other benefit is more obvious.
+          If we know the application state from a previous request we don't have
+          to query a daemon or do another blocking library call to get it.
+          This does of course imply that the plugin is properly invalidating
+          the cache using <code class="code">gs_plugin_cache_invalidate()</code> which it
+          should do whenever a change is detected.
+          Whether a plugin uses the cache for this reason is up to the plugin,
+          but if it does it is up to the plugin to make sure the cache doesn't
+          get out of sync.
+        </p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.25</div>
+</body>
+</html>
